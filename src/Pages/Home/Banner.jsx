@@ -22,7 +22,7 @@ const Banner = () => {
       />
       <div className="h-screen container mx-auto flex justify-between items-center">
         <div>
-          <h1 className="text-7xl font-extrabold lg:leading-[100px]">
+          <h1 className="text-7xl font-bold lg:leading-[100px]">
             Let&apos;s Grow Your <br /> Education Level up <br /> with
             E-Learning
           </h1>
