@@ -1,9 +1,11 @@
+import logo from "../../assets/logo.png";
+
 const Footer = () => {
   return (
     <div className="bg-[#e8e8e8]">
       <footer className="container mx-auto footer p-10 text-base-content">
         <aside>
-          <h1>StudyByddy</h1>
+          <img src={logo} alt="" />
           <p>
             ACME Industries Ltd.
             <br />

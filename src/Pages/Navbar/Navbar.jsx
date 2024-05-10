@@ -1,4 +1,50 @@
+import { NavLink } from "react-router-dom";
+import logo from "../../assets/logo.png";
+import { useState } from "react";
+
 const Navbar = () => {
+  const [dropdown, setDropdown] = useState(false);
+  const handleDopdown = () => {
+    setDropdown(!dropdown);
+  };
+
+  const links = (
+    <>
+      <li>
+        <NavLink
+          to="/"
+          className={({ isActive }) => (isActive ? "underline" : "")}
+        >
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/assignments"
+          className={({ isActive }) => (isActive ? "underline" : "")}
+        >
+          Assignments
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/creatAssignments"
+          className={({ isActive }) => (isActive ? "underline" : "")}
+        >
+          Create Assignments
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/pendingAssignments"
+          className={({ isActive }) => (isActive ? "underline" : "")}
+        >
+          Pending Assignments
+        </NavLink>
+      </li>
+    </>
+  );
+
   return (
     <div className="absolute w-full z-50">
       <div className=" container mx-auto navbar">
@@ -24,52 +70,45 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li>
-                <a>Item 1</a>
-              </li>
-              <li>
-                <a>Parent</a>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a>Item 3</a>
-              </li>
+              {links}
             </ul>
           </div>
-          <a className="text-xl">daisyUI</a>
+          <img src={logo} alt="" />
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li>
-              <details>
-                <summary>Parent</summary>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </details>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
+          <ul className="menu menu-horizontal px-1 font-bold text-xl text-[#264790]">
+            {links}
           </ul>
         </div>
-        <div className="navbar-end">
-          <a className="btn">Sign In</a>
+        <div className="dropdown dropdown-end">
+          <div
+            tabIndex={0}
+            role="button"
+            className="btn btn-ghost btn-circle avatar"
+          >
+            <div onClick={handleDopdown} className="w-10 rounded-full">
+              <img
+                alt="Tailwind CSS Navbar component"
+                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+              />
+            </div>
+          </div>
+          {dropdown && (
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-[#FEF3DB] rounded-box w-52"
+            >
+              <li>
+                <a className="justify-between">Profile</a>
+              </li>
+              <li>
+                <a>Settings</a>
+              </li>
+              <li>
+                <a>Logout</a>
+              </li>
+            </ul>
+          )}
         </div>
       </div>
     </div>

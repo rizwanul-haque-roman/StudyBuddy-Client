@@ -4,7 +4,7 @@ import Navbar from "./Pages/Navbar/Navbar";
 
 const Root = () => {
   return (
-    <div>
+    <div className="font-inter">
       <Navbar />
       <Outlet />
       <Footer />
