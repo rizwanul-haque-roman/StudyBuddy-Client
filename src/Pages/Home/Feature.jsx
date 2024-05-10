@@ -8,7 +8,7 @@ import features from "../../assets/features.png";
 
 const Feature = () => {
   return (
-    <div className="container mx-auto my-24 h-screen">
+    <div className="container mx-auto my-24">
       <h1 className="text-7xl font-bold">Features</h1>
       <div className="">
         <div className="flex gap-6 justify-between my-12">
@@ -53,7 +53,7 @@ const Feature = () => {
         <div>
           <div className="hero justify-between">
             <div className="flex justify-between items-center">
-              <img src={features} className="w-2/5 rounded-lg drop-shadow-lg" />
+              <img src={features} className="w-2/5 drop-shadow-lg" />
               <div className="w-1/2">
                 <h1 className="text-5xl font-bold">
                   Boost up you study with the best features available
@@ -91,14 +91,3 @@ const Feature = () => {
 };
 
 export default Feature;
-
-/**
- * features
- *
- * 1. Assignment Creatation
- * 2. Assignment Completion
- * 3. Assignment Grading
- * 4. Peer Review
- * 5. Free of cost
- * 6. Take or Get Help
- */
