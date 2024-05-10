@@ -3,7 +3,7 @@ import blob from "../../assets/blob.svg";
 
 const Banner = () => {
   return (
-    <div className="bg-[#fff]">
+    <div className="bg-[#f7b9332d]">
       {/* <svg
         className="w-3/4 absolute -right-[400px] -top-[350px] -z-[0] rotate-45 overflow-x-hidden"
         viewBox="0 0 200 200"
