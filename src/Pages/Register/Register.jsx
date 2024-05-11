@@ -3,10 +3,15 @@ import logo from "../../assets/logo.png";
 import logReg from "../../assets/logReg.png";
 import { HiEye } from "react-icons/hi";
 import { HiEyeOff } from "react-icons/hi";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import Swal from "sweetalert2";
+import { updateProfile } from "firebase/auth";
+import auth from "../../firebase/firebase.config";
+import { AuthContext } from "../../Auth/AuthProvider";
 
 const Register = () => {
   const [viewPass, setVewPass] = useState(true);
+  const { register } = useContext(AuthContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -15,7 +20,32 @@ const Register = () => {
     const email = form.email.value;
     const pass = form.pass.value;
 
+    if (!/[a-z]/.test(pass)) {
+      Swal.fire("Password must contain at least one Lowercase letter");
+      return;
+    } else if (!/[A-Z]/.test(pass)) {
+      Swal.fire("Password must contain at least one Upercase letter");
+      return;
+    } else if (pass.length < 6) {
+      Swal.fire("Password must contain at least 6 characters");
+      return;
+    }
+
     console.log(name, email, pass);
+
+    register(email, pass, name)
+      .then((result) => {
+        console.log(result.user);
+        Swal.fire("Registration Successful");
+        updateProfile(auth.currentUser, {
+          displayName: name,
+        })
+          .then(() => {})
+          .catch((error) => {
+            console.error(error);
+          });
+      })
+      .catch((error) => Swal.fire(error.message));
   };
 
   return (
@@ -23,7 +53,7 @@ const Register = () => {
       <div className="flex justify-center items-center">
         <form
           onSubmit={handleSubmit}
-          className="w-1/2 flex flex-col justify-center gap-4 p-12 shadow-2xl rounded-xl"
+          className="w-1/2 flex flex-col justify-center gap-4 p-12 shadow-2xl rounded-xl border"
         >
           <img className="w-1/3 mx-auto" src={logo} alt="" />
           <h1 className="font-bold text-[#264790] text-4xl text-center">

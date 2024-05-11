@@ -1,4 +1,4 @@
-const CreatAssignments = () => {
+const CreateAssignments = () => {
   return (
     <div>
       <h1>This is create assignments</h1>
@@ -6,4 +6,4 @@ const CreatAssignments = () => {
   );
 };
 
-export default CreatAssignments;
+export default CreateAssignments;

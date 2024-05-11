@@ -1,12 +1,17 @@
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import logReg from "../../assets/logReg.png";
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
 import { HiEye } from "react-icons/hi";
 import { HiEyeOff } from "react-icons/hi";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../Auth/AuthProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const [viewPass, setVewPass] = useState(true);
+  const { login } = useContext(AuthContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -14,7 +19,14 @@ const Login = () => {
     const email = form.email.value;
     const pass = form.pass.value;
 
-    console.log(name, email, pass);
+    console.log(email, pass);
+
+    login(email, pass)
+      .then((result) => {
+        console.log(result);
+        Swal.fire("Login Successful");
+      })
+      .catch((error) => Swal.fire(error.message));
   };
 
   return (
@@ -22,14 +34,14 @@ const Login = () => {
       <div className="flex justify-center items-center">
         <form
           onSubmit={handleSubmit}
-          className="w-1/2 flex flex-col justify-center gap-4 p-12 shadow-2xl rounded-xl"
+          className="w-1/2 flex flex-col justify-center gap-4 p-12 shadow-2xl rounded-xl border"
         >
           <img className="w-1/3 mx-auto" src={logo} alt="" />
           <h1 className="font-bold text-[#264790] text-4xl text-center">
             Welcome again!
           </h1>
           <p className="text-[#E58013] text-center text-xl">
-            Please Enter Your Credentials to Log In
+            Please Enter Your Credentials to LogIn
           </p>
           <div className="flex flex-col gap-6 my-8">
             <label className="border-b-2 border-[#E58013] py-2 flex items-center gap-2">
@@ -86,8 +98,17 @@ const Login = () => {
               <h3 className="text-black">Forgot Password?</h3>
             </Link>
           </div>
-          <button className="btn bg-[#E58013] rounded-full hover:bg-[#ff992c] border-0 text-2xl text-white">
-            Register
+          <button className="btn bg-[#E58013] rounded-full hover:bg-[#ff992c] border-0 text-xl text-white">
+            Log In
+          </button>
+          <p className="text-center text-xl font-bold">Or</p>
+          <button className="btn border border-[#264790] rounded-full text-xl text-[#264790]">
+            <FcGoogle />
+            Log In with Google
+          </button>
+          <button className="btn border border-[#264790] rounded-full text-xl text-[#264790]">
+            <FaGithub />
+            Log In with GitHub
           </button>
           <p className="text-black text-center font-medium">
             New to this site? Proceed to{" "}

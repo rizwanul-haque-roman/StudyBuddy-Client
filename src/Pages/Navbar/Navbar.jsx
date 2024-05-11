@@ -1,8 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../Auth/AuthProvider";
+import profile from "../../assets/profile.png";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
   const [dropdown, setDropdown] = useState(false);
   const handleDopdown = () => {
     setDropdown(!dropdown);
@@ -30,26 +34,30 @@ const Navbar = () => {
           Assignments
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          to="/creatAssignments"
-          className={({ isActive }) =>
-            isActive ? "underline text-[#E58014]" : ""
-          }
-        >
-          Create Assignments
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/pendingAssignments"
-          className={({ isActive }) =>
-            isActive ? "underline text-[#E58014]" : ""
-          }
-        >
-          Pending Assignments
-        </NavLink>
-      </li>
+      {user && (
+        <>
+          <li>
+            <NavLink
+              to="/CreateAssignments"
+              className={({ isActive }) =>
+                isActive ? "underline text-[#E58014]" : ""
+              }
+            >
+              Create Assignments
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/pendingAssignments"
+              className={({ isActive }) =>
+                isActive ? "underline text-[#E58014]" : ""
+              }
+            >
+              Pending Assignments
+            </NavLink>
+          </li>
+        </>
+      )}
     </>
   );
 
@@ -91,49 +99,66 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <div className="flex gap-3">
-            <Link>
-              <button className="btn btn-sm bg-[#E58014] hover:bg-[#E58014] text-white font-semibold border-none  drop-shadow-[0_8px_8px_rgba(247,186,51)]">
-                Log In
-              </button>
-            </Link>
-            <p>Or</p>
-            <Link to={"/register"}>
-              <button className="btn btn-sm bg-[#E58014] hover:bg-[#E58014] text-white font-semibold border-none  drop-shadow-[0_8px_8px_rgba(247,186,51)]">
-                Register
-              </button>
-            </Link>
-          </div>
-          <div className="dropdown dropdown-end">
-            <div
-              tabIndex={0}
-              role="button"
-              className="btn btn-ghost btn-circle avatar"
-            >
-              <div onClick={handleDopdown} className="w-10 rounded-full">
-                <img
-                  alt="Tailwind CSS Navbar component"
-                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-                />
-              </div>
+          {!user && (
+            <div className="flex gap-3">
+              <Link to={"/login"}>
+                <button className="btn btn-sm bg-[#E58014] hover:bg-[#E58014] text-white font-semibold border-none  drop-shadow-[0_8px_8px_rgba(247,186,51)]">
+                  Log In
+                </button>
+              </Link>
+              <p>Or</p>
+              <Link to={"/register"}>
+                <button className="btn btn-sm bg-[#E58014] hover:bg-[#E58014] text-white font-semibold border-none  drop-shadow-[0_8px_8px_rgba(247,186,51)]">
+                  Register
+                </button>
+              </Link>
             </div>
-            {dropdown && (
-              <ul
+          )}
+          {user && (
+            <div className="dropdown dropdown-end">
+              <div
                 tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-[#FEF3DB] rounded-box w-52"
+                role="button"
+                className="btn btn-ghost btn-circle avatar"
               >
-                <li>
-                  <a className="justify-between">Profile</a>
-                </li>
-                <li>
-                  <a>Settings</a>
-                </li>
-                <li>
-                  <a>Logout</a>
-                </li>
-              </ul>
-            )}
-          </div>
+                <div onClick={handleDopdown} className="w-10 rounded-full">
+                  <img
+                    alt="Tailwind CSS Navbar component"
+                    src={user?.photoURL ? user?.photoURL : profile}
+                  />
+                </div>
+              </div>
+              {dropdown && (
+                <ul
+                  tabIndex={0}
+                  className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-[#FEF3DB] rounded-box w-52"
+                >
+                  <li>
+                    <p className="justify-between">Name: {user?.displayName}</p>
+                  </li>
+                  <li>
+                    <p>Email: {user?.email}</p>
+                  </li>
+                  <Link>
+                    <button
+                      onClick={logOut}
+                      className=" my-3 btn btn-sm bg-[#E58014] hover:bg-[#E58014] text-white font-semibold border-none  drop-shadow-[0_8px_8px_rgba(247,186,51)]"
+                    >
+                      My Attempted Assignment
+                    </button>
+                  </Link>
+                  <li>
+                    <button
+                      onClick={logOut}
+                      className="btn btn-sm bg-[#E58014] hover:bg-[#E58014] text-white font-semibold border-none  drop-shadow-[0_8px_8px_rgba(247,186,51)]"
+                    >
+                      Log Out
+                    </button>
+                  </li>
+                </ul>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </div>
