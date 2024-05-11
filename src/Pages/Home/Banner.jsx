@@ -26,7 +26,7 @@ const Banner = () => {
             Let&apos;s Grow Your <br /> Education Level up <br /> with
             E-Learning
           </h1>
-          <button className="btn bg-[#F7BA33] hover:bg-[#F7BA33] text-white font-bold text-xl border-none mt-20 drop-shadow-[0_8px_8px_rgba(247,186,51)]">
+          <button className="btn bg-[#E58014] hover:bg-[#E58014] text-white font-bold text-xl border-none mt-20 drop-shadow-[0_8px_8px_rgba(247,186,51)]">
             Get started
           </button>
         </div>

@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { useState } from "react";
 
@@ -13,7 +13,9 @@ const Navbar = () => {
       <li>
         <NavLink
           to="/"
-          className={({ isActive }) => (isActive ? "underline" : "")}
+          className={({ isActive }) =>
+            isActive ? "underline text-[#E58014]" : ""
+          }
         >
           Home
         </NavLink>
@@ -21,7 +23,9 @@ const Navbar = () => {
       <li>
         <NavLink
           to="/assignments"
-          className={({ isActive }) => (isActive ? "underline" : "")}
+          className={({ isActive }) =>
+            isActive ? "underline text-[#E58014]" : ""
+          }
         >
           Assignments
         </NavLink>
@@ -29,7 +33,9 @@ const Navbar = () => {
       <li>
         <NavLink
           to="/creatAssignments"
-          className={({ isActive }) => (isActive ? "underline" : "")}
+          className={({ isActive }) =>
+            isActive ? "underline text-[#E58014]" : ""
+          }
         >
           Create Assignments
         </NavLink>
@@ -37,7 +43,9 @@ const Navbar = () => {
       <li>
         <NavLink
           to="/pendingAssignments"
-          className={({ isActive }) => (isActive ? "underline" : "")}
+          className={({ isActive }) =>
+            isActive ? "underline text-[#E58014]" : ""
+          }
         >
           Pending Assignments
         </NavLink>
@@ -73,42 +81,59 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <img src={logo} alt="" />
+          <Link to={"/"}>
+            <img src={logo} alt="" />
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 font-bold text-xl text-[#264790]">
             {links}
           </ul>
         </div>
-        <div className="dropdown dropdown-end">
-          <div
-            tabIndex={0}
-            role="button"
-            className="btn btn-ghost btn-circle avatar"
-          >
-            <div onClick={handleDopdown} className="w-10 rounded-full">
-              <img
-                alt="Tailwind CSS Navbar component"
-                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-              />
-            </div>
+        <div className="navbar-end">
+          <div className="flex gap-3">
+            <Link>
+              <button className="btn btn-sm bg-[#E58014] hover:bg-[#E58014] text-white font-semibold border-none  drop-shadow-[0_8px_8px_rgba(247,186,51)]">
+                Log In
+              </button>
+            </Link>
+            <p>Or</p>
+            <Link to={"/register"}>
+              <button className="btn btn-sm bg-[#E58014] hover:bg-[#E58014] text-white font-semibold border-none  drop-shadow-[0_8px_8px_rgba(247,186,51)]">
+                Register
+              </button>
+            </Link>
           </div>
-          {dropdown && (
-            <ul
+          <div className="dropdown dropdown-end">
+            <div
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-[#FEF3DB] rounded-box w-52"
+              role="button"
+              className="btn btn-ghost btn-circle avatar"
             >
-              <li>
-                <a className="justify-between">Profile</a>
-              </li>
-              <li>
-                <a>Settings</a>
-              </li>
-              <li>
-                <a>Logout</a>
-              </li>
-            </ul>
-          )}
+              <div onClick={handleDopdown} className="w-10 rounded-full">
+                <img
+                  alt="Tailwind CSS Navbar component"
+                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                />
+              </div>
+            </div>
+            {dropdown && (
+              <ul
+                tabIndex={0}
+                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-[#FEF3DB] rounded-box w-52"
+              >
+                <li>
+                  <a className="justify-between">Profile</a>
+                </li>
+                <li>
+                  <a>Settings</a>
+                </li>
+                <li>
+                  <a>Logout</a>
+                </li>
+              </ul>
+            )}
+          </div>
         </div>
       </div>
     </div>

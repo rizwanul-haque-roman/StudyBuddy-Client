@@ -17,7 +17,7 @@ const Members = () => {
                   everyday. Solve problems by completing assignmets and charge
                   up your brain.
                 </p>
-                <button className="btn bg-[#F7BA33] hover:bg-[#F7BA33] text-white font-bold text-xl border-none drop-shadow-[0_8px_8px_rgba(247,186,51)]">
+                <button className="btn bg-[#E58014] hover:bg-[#E58014] text-white font-bold text-xl border-none drop-shadow-[0_8px_8px_rgba(247,186,51)]">
                   Join Now
                 </button>
               </div>
