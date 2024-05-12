@@ -37,7 +37,7 @@ const CreateAssignments = () => {
   };
 
   return (
-    <div className="h-screen pt-28 container mx-auto">
+    <div className="min-h-screen pt-28 container mx-auto">
       <div>
         <h1 className="text-5xl font-bold">Create Assignments</h1>
         <p className="w-3/4 mt-6 text-xl">

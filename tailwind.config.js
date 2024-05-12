@@ -7,6 +7,9 @@ export default {
       fontFamily: {
         inter: '"Inter", sans-serif',
       },
+      backgroundImage: {
+        assignment: "url('src/assets/assignmentBanner.png')",
+      },
     },
   },
   plugins: [daisyui],
