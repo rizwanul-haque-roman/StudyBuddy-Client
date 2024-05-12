@@ -62,7 +62,7 @@ const CreateAssignments = () => {
                 type="text"
                 placeholder="Title of assignment"
                 name="title"
-                className="outline-none w-full py-4 border-b-2 border-[#264790]"
+                className="outline-none w-full py-4 pl-1 border-b-2 border-[#264790]"
               />
             </label>
             <label className="form-control w-full">
@@ -75,7 +75,7 @@ const CreateAssignments = () => {
                 type="number"
                 placeholder="Assignment marks. i.e 100"
                 name="marks"
-                className="outline-none w-full py-4 border-b-2 border-[#264790]"
+                className="outline-none w-full py-4 pl-1 border-b-2 border-[#264790]"
               />
             </label>
           </div>
@@ -86,9 +86,9 @@ const CreateAssignments = () => {
               </span>
             </div>
             <textarea
-              placeholder="Explain the assignment shortly"
+              placeholder="Describe the assignment"
               name="description"
-              className="outline-none w-full py-4 border-b-2 border-[#264790]"
+              className="outline-none w-full py-4 pl-1 border-b-2 border-[#264790]"
             />
           </label>
           <label className="form-control w-full mt-6">
@@ -101,7 +101,7 @@ const CreateAssignments = () => {
               type="url"
               placeholder="Enter thumbnail url"
               name="url"
-              className="outline-none w-full py-4 border-b-2 border-[#264790]"
+              className="outline-none w-full py-4 pl-1 border-b-2 border-[#264790]"
             />
           </label>
           <div className="flex gap-6 items-center mt-6">
@@ -133,10 +133,10 @@ const CreateAssignments = () => {
                 type="date"
                 placeholder="Assignment marks. i.e 100"
                 name="date"
-                className="outline-none w-full py-4 border-b-2 border-[#264790]"
+                className="outline-none w-full py-4  border-b-2 border-[#264790]"
               /> */}
               <DatePicker
-                className="outline-none w-full py-4 border-b-2 border-[#264790]"
+                className="outline-none w-full py-4 pl-1 border-b-2 border-[#264790]"
                 selected={startDate}
                 onChange={(date) => setStartDate(date)}
               />

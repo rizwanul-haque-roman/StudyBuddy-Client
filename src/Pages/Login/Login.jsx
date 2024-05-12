@@ -11,7 +11,7 @@ import Swal from "sweetalert2";
 
 const Login = () => {
   const [viewPass, setVewPass] = useState(true);
-  const { login } = useContext(AuthContext);
+  const { login, googleLogin, githubLogin } = useContext(AuthContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -22,6 +22,24 @@ const Login = () => {
     console.log(email, pass);
 
     login(email, pass)
+      .then((result) => {
+        console.log(result);
+        Swal.fire("Login Successful");
+      })
+      .catch((error) => Swal.fire(error.message));
+  };
+
+  const google = () => {
+    googleLogin()
+      .then((result) => {
+        console.log(result);
+        Swal.fire("Login Successful");
+      })
+      .catch((error) => Swal.fire(error.message));
+  };
+
+  const gitHub = () => {
+    githubLogin()
       .then((result) => {
         console.log(result);
         Swal.fire("Login Successful");
@@ -102,14 +120,20 @@ const Login = () => {
             Log In
           </button>
           <p className="text-center text-xl font-bold">Or</p>
-          <button className="btn border border-[#264790] rounded-full text-xl text-[#264790]">
+          <Link
+            onClick={google}
+            className="btn border border-[#264790] rounded-full text-xl text-[#264790]"
+          >
             <FcGoogle />
             Log In with Google
-          </button>
-          <button className="btn border border-[#264790] rounded-full text-xl text-[#264790]">
+          </Link>
+          <Link
+            onClick={gitHub}
+            className="btn border border-[#264790] rounded-full text-xl text-[#264790]"
+          >
             <FaGithub />
             Log In with GitHub
-          </button>
+          </Link>
           <p className="text-black text-center font-medium">
             New to this site? Proceed to{" "}
             <Link className="underline text-[#E58013]" to={"/register"}>
