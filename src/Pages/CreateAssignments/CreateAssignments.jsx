@@ -3,6 +3,8 @@ import form from "../../assets/form.png";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from "../../Auth/AuthProvider";
+import Swal from "sweetalert2";
+import axios from "axios";
 
 const CreateAssignments = () => {
   const { user } = useContext(AuthContext);
@@ -18,6 +20,52 @@ const CreateAssignments = () => {
     const url = form.url.value;
     const deadline = startDate.toLocaleDateString();
     const publisher = user?.email;
+    const today = new Date().toLocaleDateString();
+
+    console.log(today);
+
+    if (title.length < 15) {
+      Swal.fire({
+        icon: "error",
+        title: "Error!",
+        text: "Assignment title should contain more than 15 characters.",
+      });
+      return;
+    }
+    if (marks > 50) {
+      Swal.fire({
+        icon: "error",
+        title: "Error!",
+        text: "Maximum mark should not exceed 50.",
+      });
+      return;
+    }
+    if (description.length < 50) {
+      Swal.fire({
+        icon: "error",
+        title: "Error!",
+        text: "Assignment description should contain more than 50 characters.",
+      });
+      return;
+    }
+    if (difficulty === "") {
+      Swal.fire({
+        icon: "error",
+        title: "Error!",
+        text: "Please select difficulty for the assignment",
+      });
+      console.log(difficulty);
+      return;
+    }
+    if (deadline <= today) {
+      Swal.fire({
+        icon: "error",
+        title: "Error!",
+        text: "Please give at least one day time to complete the assignment.",
+      });
+      console.log(difficulty);
+      return;
+    }
 
     const assignment = {
       publisher,
@@ -28,6 +76,21 @@ const CreateAssignments = () => {
       difficulty,
       deadline,
     };
+
+    axios.post("http://localhost:3000/assignments", assignment).then((res) => {
+      console.log(res.data);
+      if (res.data.acknowledged === true) {
+        Swal.fire({
+          title: "Good job!",
+          text: "You clicked the button!",
+          icon: "success",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            location.reload();
+          }
+        });
+      }
+    });
 
     console.log(assignment);
   };
@@ -63,6 +126,7 @@ const CreateAssignments = () => {
                 placeholder="Title of assignment"
                 name="title"
                 className="outline-none w-full py-4 pl-1 border-b-2 border-[#264790]"
+                required
               />
             </label>
             <label className="form-control w-full">
@@ -73,9 +137,10 @@ const CreateAssignments = () => {
               </div>
               <input
                 type="number"
-                placeholder="Assignment marks. i.e 100"
+                placeholder="Assignment marks. i.e 50"
                 name="marks"
                 className="outline-none w-full py-4 pl-1 border-b-2 border-[#264790]"
+                required
               />
             </label>
           </div>
@@ -89,6 +154,7 @@ const CreateAssignments = () => {
               placeholder="Describe the assignment"
               name="description"
               className="outline-none w-full py-4 pl-1 border-b-2 border-[#264790]"
+              required
             />
           </label>
           <label className="form-control w-full mt-6">
@@ -102,6 +168,7 @@ const CreateAssignments = () => {
               placeholder="Enter thumbnail url"
               name="url"
               className="outline-none w-full py-4 pl-1 border-b-2 border-[#264790]"
+              required
             />
           </label>
           <div className="flex gap-6 items-center mt-6">
@@ -114,6 +181,7 @@ const CreateAssignments = () => {
               <select
                 onChange={handleChange}
                 className="outline-none w-full py-[18px] border-b-2 border-[#264790]"
+                required
               >
                 <option disabled selected>
                   Set Diffuculty
@@ -129,16 +197,11 @@ const CreateAssignments = () => {
                   Assignment Deadline
                 </span>
               </div>
-              {/* <input
-                type="date"
-                placeholder="Assignment marks. i.e 100"
-                name="date"
-                className="outline-none w-full py-4  border-b-2 border-[#264790]"
-              /> */}
               <DatePicker
                 className="outline-none w-full py-4 pl-1 border-b-2 border-[#264790]"
                 selected={startDate}
                 onChange={(date) => setStartDate(date)}
+                required
               />
             </label>
           </div>
