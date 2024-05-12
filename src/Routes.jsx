@@ -32,7 +32,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/pendingAssignments",
-        element: <PendingAssignments />,
+        element: (
+          <Private>
+            <PendingAssignments />
+          </Private>
+        ),
       },
       {
         path: "/register",

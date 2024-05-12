@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import logReg from "../../assets/logReg.png";
 import { HiEye } from "react-icons/hi";
@@ -12,6 +12,7 @@ import { AuthContext } from "../../Auth/AuthProvider";
 const Register = () => {
   const [viewPass, setVewPass] = useState(true);
   const { register } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -36,6 +37,7 @@ const Register = () => {
     register(email, pass, name)
       .then((result) => {
         console.log(result.user);
+        navigate("/");
         Swal.fire("Registration Successful");
         updateProfile(auth.currentUser, {
           displayName: name,

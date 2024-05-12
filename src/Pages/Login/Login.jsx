@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import logReg from "../../assets/logReg.png";
 import { FcGoogle } from "react-icons/fc";
@@ -12,6 +12,8 @@ import Swal from "sweetalert2";
 const Login = () => {
   const [viewPass, setVewPass] = useState(true);
   const { login, googleLogin, githubLogin } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -33,6 +35,7 @@ const Login = () => {
     googleLogin()
       .then((result) => {
         console.log(result);
+        navigate(location?.state ? location.state : "/");
         Swal.fire("Login Successful");
       })
       .catch((error) => Swal.fire(error.message));
