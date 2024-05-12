@@ -12,7 +12,7 @@ const CardAssignment = ({ assignment }) => {
           <img className="rounded-2xl" src={url} alt="" />
         </div>
         <div className="flex justify-between items-center gap-6 w-full">
-          <div className="space-y-5">
+          <div className="space-y-5 w-3/5">
             <h3 className="text-2xl font-semibold">Title: {title}</h3>
             <p className="text-xl font-medium">Marks: {marks}</p>
             <p className="text-xl font-medium">
