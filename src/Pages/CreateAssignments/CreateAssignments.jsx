@@ -77,20 +77,22 @@ const CreateAssignments = () => {
       deadline,
     };
 
-    axios.post("http://localhost:3000/assignments", assignment).then((res) => {
-      console.log(res.data);
-      if (res.data.acknowledged === true) {
-        Swal.fire({
-          title: "Good job!",
-          text: "You clicked the button!",
-          icon: "success",
-        }).then((result) => {
-          if (result.isConfirmed) {
-            location.reload();
-          }
-        });
-      }
-    });
+    axios
+      .post("https://study-buddy-server-six.vercel.app/assignments", assignment)
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.acknowledged === true) {
+          Swal.fire({
+            title: "Good job!",
+            text: "You clicked the button!",
+            icon: "success",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              location.reload();
+            }
+          });
+        }
+      });
 
     console.log(assignment);
   };
