@@ -75,17 +75,19 @@ const CardAssignment = ({ assignment, data, setData }) => {
             </p>
           </div>
           <div className="flex flex-col gap-2">
-            <p className="btn bg-amber-500 hover:bg-amber-600">
-              <HiDocumentSearch className="text-xl" /> View
-            </p>
+            <Link to={`http://localhost:5173/view/${_id}`}>
+              <p className="btn bg-amber-500 hover:bg-amber-600 w-full">
+                <HiDocumentSearch className="text-xl" /> View
+              </p>
+            </Link>
             <Link to={`http://localhost:5173/update/${_id}`}>
-              <p className="btn bg-green-500 hover:bg-green-600">
+              <p className="btn bg-green-500 hover:bg-green-600 w-full">
                 <MdEditDocument className="text-xl" /> Update
               </p>
             </Link>
             <p
               onClick={handleDelete}
-              className="btn bg-red-400 hover:bg-red-500"
+              className="btn bg-red-400 hover:bg-red-500 w-full"
             >
               <AiTwotoneDelete className="text-xl" /> Delete
             </p>

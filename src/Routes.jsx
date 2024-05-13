@@ -8,6 +8,7 @@ import Login from "./Pages/Login/Login";
 import CreateAssignments from "./Pages/CreateAssignments/CreateAssignments";
 import Private from "./Private/Private";
 import Update from "./Pages/Update/Update";
+import ViewAssignment from "./Pages/View/ViewAssignment";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,16 @@ const router = createBrowserRouter([
         element: (
           <Private>
             <Update />
+          </Private>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/assignment?id=${params.id}`),
+      },
+      {
+        path: "/view/:id",
+        element: (
+          <Private>
+            <ViewAssignment />
           </Private>
         ),
         loader: ({ params }) =>
