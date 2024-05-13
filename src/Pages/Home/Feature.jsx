@@ -9,7 +9,7 @@ import features from "../../assets/features.png";
 const Feature = () => {
   return (
     <div className="container mx-auto my-24">
-      <h1 className="text-7xl font-bold">Features</h1>
+      <h1 className="text-7xl font-bold">What We Provide</h1>
       <div className="">
         <div className="flex gap-6 justify-between my-12">
           <div className="flex flex-col juctify-center bg-[#F8F8F8] hover:bg-[#fff] items-center hover:transform hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out hover:drop-shadow-xl transition duration-300 ease-out p-6 w-auto rounded-2xl">
