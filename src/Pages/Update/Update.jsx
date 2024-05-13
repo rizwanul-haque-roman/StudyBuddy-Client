@@ -104,6 +104,18 @@ const Update = () => {
             }
           });
         }
+
+        if (res.data.modifiedCount === 0) {
+          Swal.fire({
+            title: "Warning!",
+            text: "You have not updated anything. Click ok to go back to assignments page or click outside this window to continue updating",
+            icon: "warning",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              navigate("/assignments");
+            }
+          });
+        }
       });
 
     console.log(assignment);
