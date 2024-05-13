@@ -40,7 +40,7 @@ const CreateAssignments = () => {
       });
       return;
     }
-    if (description.length < 50) {
+    if (description.length < 30) {
       Swal.fire({
         icon: "error",
         title: "Error!",
@@ -83,8 +83,8 @@ const CreateAssignments = () => {
         console.log(res.data);
         if (res.data.acknowledged === true) {
           Swal.fire({
-            title: "Good job!",
-            text: "You clicked the button!",
+            title: "Success!",
+            text: "Assignment Created Successfully!",
             icon: "success",
           }).then((result) => {
             if (result.isConfirmed) {

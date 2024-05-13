@@ -15,7 +15,7 @@ const Assignments = () => {
     isNaN(count?.count) ? 0 / dataPerPage : count?.count / dataPerPage
   );
 
-  console.log(difficulty);
+  // console.log(difficulty);
   const pages = [...Array(totalPage).keys()];
 
   const haandlePrev = () => {
@@ -52,6 +52,7 @@ const Assignments = () => {
       )
       .then((res) => {
         setAssignments(res.data);
+        setCurrentPage(1);
         setLoader(false);
       });
   }, [currentPage, difficulty]);

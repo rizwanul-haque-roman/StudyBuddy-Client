@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 import { useContext } from "react";
 import { AuthContext } from "../../Auth/AuthProvider";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const CardAssignment = ({ assignment, data, setData }) => {
   const { _id, url, title, marks, difficulty, publisher } = assignment;
@@ -26,7 +27,9 @@ const CardAssignment = ({ assignment, data, setData }) => {
       if (result.isConfirmed) {
         if (publisher === user?.email) {
           axios
-            .delete(`http://localhost:3000/assignments?id=${_id}`)
+            .delete(
+              `https://study-buddy-server-six.vercel.app/assignments?id=${_id}`
+            )
             .then((res) => {
               console.log(res.data);
               if (res.data.acknowledged === true) {
@@ -75,9 +78,11 @@ const CardAssignment = ({ assignment, data, setData }) => {
             <p className="btn bg-amber-500 hover:bg-amber-600">
               <HiDocumentSearch className="text-xl" /> View
             </p>
-            <p className="btn bg-green-500 hover:bg-green-600">
-              <MdEditDocument className="text-xl" /> Update
-            </p>
+            <Link to={`http://localhost:5173/update/${_id}`}>
+              <p className="btn bg-green-500 hover:bg-green-600">
+                <MdEditDocument className="text-xl" /> Update
+              </p>
+            </Link>
             <p
               onClick={handleDelete}
               className="btn bg-red-400 hover:bg-red-500"
