@@ -20,8 +20,8 @@ const router = createBrowserRouter([
       {
         path: "/assignments",
         element: <Assignments />,
-        loader: () =>
-          fetch("https://study-buddy-server-six.vercel.app/totalAssignments"),
+        // loader: () =>
+        //   fetch("https://study-buddy-server-six.vercel.app/totalAssignments"),
       },
       {
         path: "/CreateAssignments",

@@ -6,8 +6,8 @@ import PropTypes from "prop-types";
 const CardAssignment = ({ assignment }) => {
   const { url, title, marks, difficulty } = assignment;
   return (
-    <div className="bg-white rounded-2xl hover:transform hover:scale-110 hover:transition hover:duration-300  hover:drop-shadow-xl transition duration-300 ease-out ">
-      <div className="flex justify-between items-center border-2 rounded-2xl gap-6 p-6">
+    <div className="bg-white rounded-2xl hover:transform hover:scale-110 hover:transition hover:duration-300  hover:drop-shadow-xl transition duration-300 ease-out border-2 rounded-2xl">
+      <div className="flex justify-between items-center gap-6 p-6">
         <div className="w-1/3 roounded-2xl">
           <img className="rounded-2xl" src={url} alt="" />
         </div>

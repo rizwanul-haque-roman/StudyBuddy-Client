@@ -1,21 +1,21 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import CardAssignment from "./CardAssignment";
-import { useLoaderData } from "react-router-dom";
 import banner from "../../assets/assignmentBanner.png";
 import loader_gif from "../../assets/loader-ezgif.gif";
 
 const Assignments = () => {
   const [assignments, setAssignments] = useState([]);
   const [loader, setLoader] = useState(true);
-  // const [pages, setPages] = useState([]);
+  const [difficulty, setDifficulty] = useState("");
+  const [count, setCount] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const dataPerPage = 6;
-  const { count } = useLoaderData();
-  let totalPage = Math.ceil(count / dataPerPage);
+  let totalPage = Math.ceil(
+    isNaN(count?.count) ? 0 / dataPerPage : count?.count / dataPerPage
+  );
   const pages = [...Array(totalPage).keys()];
 
-  console.log(count);
   const haandlePrev = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
@@ -27,20 +27,32 @@ const Assignments = () => {
     }
   };
 
+  const handleChange = (event) => {
+    setDifficulty(event.target.value);
+  };
+
   useEffect(() => {
+    axios
+      .get(
+        `https://study-buddy-server-six.vercel.app/totalAssignments?difficulty=${difficulty}`
+      )
+      .then((res) => {
+        setCount(res.data);
+        setLoader(false);
+      });
+
     axios
       .get(
         `https://study-buddy-server-six.vercel.app/assignments?page=${
           currentPage - 1
-        }&size=${dataPerPage}`
+        }&size=${dataPerPage}&difficulty=${difficulty}`
       )
       .then((res) => {
         setAssignments(res.data);
         setLoader(false);
       });
-  }, [currentPage]);
+  }, [currentPage, difficulty]);
 
-  // console.log(assignments);
   return (
     <div>
       {loader ? (
@@ -59,6 +71,29 @@ const Assignments = () => {
               <h1 className="text-center my-12 text-5xl font-bold">
                 Available Assignments
               </h1>
+              <div>
+                <form>
+                  <label className="form-control w-full max-w-xs">
+                    <div className="label">
+                      <span className="label-text text-lg font-semibold">
+                        Filter
+                      </span>
+                    </div>
+                    <select
+                      onChange={handleChange}
+                      className="select select-bordered"
+                    >
+                      <option disabled selected>
+                        Filter by Difficulty
+                      </option>
+                      <option value={"easy"}>Easy</option>
+                      <option value={"medium"}>Medium</option>
+                      <option value={"hard"}>Hard</option>
+                      <option value={"all"}>Show all</option>
+                    </select>
+                  </label>
+                </form>
+              </div>
               <div className="grid grid-cols-2 gap-6 my-12">
                 {assignments.map((assignment) => (
                   <CardAssignment
