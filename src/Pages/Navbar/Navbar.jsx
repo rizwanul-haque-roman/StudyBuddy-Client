@@ -123,7 +123,7 @@ const Navbar = () => {
               >
                 <div onClick={handleDopdown} className="w-10 rounded-full">
                   <img
-                    alt="Tailwind CSS Navbar component"
+                    alt="Profile Photo"
                     src={user?.photoURL ? user?.photoURL : profile}
                   />
                 </div>

@@ -14,6 +14,8 @@ const Assignments = () => {
   let totalPage = Math.ceil(
     isNaN(count?.count) ? 0 / dataPerPage : count?.count / dataPerPage
   );
+
+  console.log(difficulty);
   const pages = [...Array(totalPage).keys()];
 
   const haandlePrev = () => {
@@ -32,6 +34,7 @@ const Assignments = () => {
   };
 
   useEffect(() => {
+    setLoader(true);
     axios
       .get(
         `https://study-buddy-server-six.vercel.app/totalAssignments?difficulty=${difficulty}`
@@ -80,12 +83,13 @@ const Assignments = () => {
                       </span>
                     </div>
                     <select
+                      value={
+                        difficulty === "" ? "Filter by Difficulty" : difficulty
+                      }
                       onChange={handleChange}
                       className="select select-bordered"
                     >
-                      <option disabled selected>
-                        Filter by Difficulty
-                      </option>
+                      <option disabled>Filter by Difficulty</option>
                       <option value={"easy"}>Easy</option>
                       <option value={"medium"}>Medium</option>
                       <option value={"hard"}>Hard</option>
@@ -99,6 +103,8 @@ const Assignments = () => {
                   <CardAssignment
                     key={assignment._id}
                     assignment={assignment}
+                    data={assignments}
+                    setData={setAssignments}
                   />
                 ))}
               </div>

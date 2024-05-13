@@ -27,6 +27,7 @@ const Login = () => {
       .then((result) => {
         console.log(result);
         Swal.fire("Login Successful");
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => Swal.fire(error.message));
   };
