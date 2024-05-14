@@ -22,8 +22,6 @@ const router = createBrowserRouter([
       {
         path: "/assignments",
         element: <Assignments />,
-        // loader: () =>
-        //   fetch("https://study-buddy-server-six.vercel.app/totalAssignments"),
       },
       {
         path: "/CreateAssignments",
@@ -49,7 +47,9 @@ const router = createBrowserRouter([
           </Private>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/assignment?id=${params.id}`),
+          fetch(
+            `https://study-buddy-server-six.vercel.app/assignment?id=${params.id}`
+          ),
       },
       {
         path: "/view/:id",
@@ -59,7 +59,9 @@ const router = createBrowserRouter([
           </Private>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/assignment?id=${params.id}`),
+          fetch(
+            `https://study-buddy-server-six.vercel.app/assignment?id=${params.id}`
+          ),
       },
       {
         path: "/register",

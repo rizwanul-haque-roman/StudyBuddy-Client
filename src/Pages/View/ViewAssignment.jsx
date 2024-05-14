@@ -1,10 +1,15 @@
 import { useLoaderData } from "react-router-dom";
 import banner from "../../assets/viewAssignment.png";
+import Modal from "./Modal";
+import { useState } from "react";
 
 const ViewAssignment = () => {
   const assignment = useLoaderData();
-  console.log(assignment);
-  const { title, deadline, difficulty, description, marks, url } = assignment;
+  const [showModal, setShowModal] = useState(false);
+
+  const { _id, title, deadline, difficulty, description, marks, url } =
+    assignment;
+
   return (
     <div className="min-h-screen pt-28 container mx-auto">
       <div>
@@ -35,9 +40,18 @@ const ViewAssignment = () => {
             <div className="my-6">
               <h3 className="text-2xl font-semibold">Assignment Description</h3>
               <p className="mt-2 text-lg">{description}</p>
-              <button className="mt-10 btn bg-[#E58014] hover:bg-[#E58014] text-xl text-white font-semibold border-none  drop-shadow-[0_8px_8px_rgba(247,186,51)]">
+              <button
+                onClick={() => setShowModal(true)}
+                className="mt-10 btn bg-[#E58014] hover:bg-[#E58014] text-xl text-white font-semibold border-none  drop-shadow-[0_8px_8px_rgba(247,186,51)]"
+              >
                 Take Assignment
               </button>
+              <Modal
+                isOpen={showModal}
+                isClose={setShowModal}
+                id={_id}
+                title={title}
+              ></Modal>
             </div>
           </div>
         </div>
