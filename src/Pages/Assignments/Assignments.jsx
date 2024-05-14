@@ -31,6 +31,7 @@ const Assignments = () => {
 
   const handleChange = (event) => {
     setDifficulty(event.target.value);
+    setCurrentPage(1);
   };
 
   useEffect(() => {
@@ -52,7 +53,6 @@ const Assignments = () => {
       )
       .then((res) => {
         setAssignments(res.data);
-        setCurrentPage(1);
         setLoader(false);
       });
   }, [currentPage, difficulty]);
