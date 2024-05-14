@@ -69,7 +69,7 @@ const Modal = ({ isOpen, isClose, id, title, marks }) => {
             x
           </button>
         </div>
-        <div className="bg-white py-8 px-12 rounded-2xl">
+        <div className=" bg-orange-100 py-8 px-12 rounded-2xl">
           <h1 className="text-2xl font-bold text-center">
             Submit your copy of assignment
           </h1>

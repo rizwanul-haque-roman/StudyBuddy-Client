@@ -9,6 +9,7 @@ import CreateAssignments from "./Pages/CreateAssignments/CreateAssignments";
 import Private from "./Private/Private";
 import Update from "./Pages/Update/Update";
 import ViewAssignment from "./Pages/View/ViewAssignment";
+import MySubmittedAssignments from "./Pages/MySubmittedAssignments/MySubmittedAssignments";
 
 const router = createBrowserRouter([
   {
@@ -62,6 +63,14 @@ const router = createBrowserRouter([
           fetch(
             `https://study-buddy-server-six.vercel.app/assignment?id=${params.id}`
           ),
+      },
+      {
+        path: "/mySubmission",
+        element: (
+          <Private>
+            <MySubmittedAssignments />
+          </Private>
+        ),
       },
       {
         path: "/register",

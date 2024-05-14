@@ -139,18 +139,15 @@ const Navbar = () => {
                   <li>
                     <p>Email: {user?.email}</p>
                   </li>
-                  <Link>
-                    <button
-                      onClick={logOut}
-                      className=" my-3 btn btn-sm bg-[#E58014] hover:bg-[#E58014] text-white font-semibold border-none  drop-shadow-[0_8px_8px_rgba(247,186,51)]"
-                    >
-                      My Attempted Assignment
+                  <Link to={"/mySubmission"}>
+                    <button className="w-full my-3 btn btn-sm bg-[#E58014] hover:bg-[#E58014] text-white font-semibold border-none">
+                      My Submission
                     </button>
                   </Link>
                   <li>
                     <button
                       onClick={logOut}
-                      className="btn btn-sm bg-[#E58014] hover:bg-[#E58014] text-white font-semibold border-none  drop-shadow-[0_8px_8px_rgba(247,186,51)]"
+                      className="btn btn-sm bg-[#E58014] hover:bg-[#E58014] text-white font-semibold border-none"
                     >
                       Log Out
                     </button>

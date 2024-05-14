@@ -12,39 +12,39 @@ const Feature = () => {
       <h1 className="text-7xl font-bold">What We Provide</h1>
       <div className="">
         <div className="flex gap-6 justify-between my-12">
-          <div className="flex flex-col juctify-center bg-[#F8F8F8] hover:bg-[#fff] items-center hover:transform hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out hover:drop-shadow-xl transition duration-300 ease-out p-6 w-auto rounded-2xl">
-            <MdAssignment className="text-8xl text-[#5F9388]" />
+          <div className="flex flex-col juctify-center bg-[#F7F7F7] hover:bg-[#fff] items-center hover:transform hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out hover:drop-shadow-xl transition duration-300 ease-out p-6 w-auto rounded-2xl">
+            <MdAssignment className="text-8xl text-[#264790]" />
             <h3 className="text-xl font-medium">
               Assignment <br /> Creatation
             </h3>
           </div>
-          <div className="flex flex-col juctify-center bg-[#F8F8F8] hover:bg-[#fff] items-center hover:transform hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out hover:drop-shadow-xl transition duration-300 ease-out p-6 w-auto rounded-2xl">
-            <MdAssignmentTurnedIn className="text-8xl text-[#5F9388]" />
+          <div className="flex flex-col juctify-center bg-[#F7F7F7] hover:bg-[#fff] items-center hover:transform hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out hover:drop-shadow-xl transition duration-300 ease-out p-6 w-auto rounded-2xl">
+            <MdAssignmentTurnedIn className="text-8xl text-[#264790]" />
             <h3 className="text-xl font-medium">
               Assignment <br /> Completion
             </h3>
           </div>
-          <div className="flex flex-col juctify-center bg-[#F8F8F8] hover:bg-[#fff] items-center hover:transform hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out hover:drop-shadow-xl transition duration-300 ease-out p-6 w-auto rounded-2xl">
-            <GrDocumentPerformance className="text-8xl text-[#5F9388]" />
+          <div className="flex flex-col juctify-center bg-[#F7F7F7] hover:bg-[#fff] items-center hover:transform hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out hover:drop-shadow-xl transition duration-300 ease-out p-6 w-auto rounded-2xl">
+            <GrDocumentPerformance className="text-8xl text-[#264790]" />
             <h3 className="text-xl font-medium">
               Assignment <br /> Grading
             </h3>
           </div>
-          <div className="flex flex-col juctify-center bg-[#F8F8F8] hover:bg-[#fff] items-center hover:transform hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out hover:drop-shadow-xl transition duration-300 ease-out p-6 w-auto rounded-2xl">
-            <MdOutlineRateReview className="text-8xl text-[#5F9388]" />
+          <div className="flex flex-col juctify-center bg-[#F7F7F7] hover:bg-[#fff] items-center hover:transform hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out hover:drop-shadow-xl transition duration-300 ease-out p-6 w-auto rounded-2xl">
+            <MdOutlineRateReview className="text-8xl text-[#264790]" />
             <h3 className="text-xl font-medium">
               Peer <br /> Review
             </h3>
           </div>
-          <div className="flex flex-col juctify-center bg-[#F8F8F8] hover:bg-[#fff] items-center hover:transform hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out hover:drop-shadow-xl transition duration-300 ease-out p-6 w-auto rounded-2xl">
-            <FaHandsHelping className="text-8xl text-[#5F9388]" />
+          <div className="flex flex-col juctify-center bg-[#F7F7F7] hover:bg-[#fff] items-center hover:transform hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out hover:drop-shadow-xl transition duration-300 ease-out p-6 w-auto rounded-2xl">
+            <FaHandsHelping className="text-8xl text-[#264790]" />
             <h3 className="text-xl font-medium">
               Take or Get
               <br /> Help
             </h3>
           </div>
-          <div className="flex flex-col juctify-center bg-[#F8F8F8] hover:bg-[#fff] items-center hover:transform hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out hover:drop-shadow-xl transition duration-300 ease-out p-6 w-auto rounded-2xl">
-            <TbFreeRights className="text-8xl text-[#5F9388]" />
+          <div className="flex flex-col juctify-center bg-[#F7F7F7] hover:bg-[#fff] items-center hover:transform hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out hover:drop-shadow-xl transition duration-300 ease-out p-6 w-auto rounded-2xl">
+            <TbFreeRights className="text-8xl text-[#264790]" />
             <h3 className="text-xl font-medium">
               Free of <br /> Cost
             </h3>
