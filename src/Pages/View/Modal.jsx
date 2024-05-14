@@ -4,7 +4,7 @@ import { AuthContext } from "../../Auth/AuthProvider";
 import axios from "axios";
 import Swal from "sweetalert2";
 
-const Modal = ({ isOpen, isClose, id, title }) => {
+const Modal = ({ isOpen, isClose, id, title, marks }) => {
   const { user } = useContext(AuthContext);
   if (!isOpen) {
     return null;
@@ -19,15 +19,19 @@ const Modal = ({ isOpen, isClose, id, title }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
-    const feedback = form.feedback.value;
+    const note = form.note.value;
     const link = form.link.value;
 
     const assignmentSubmission = {
       assignmentId: id,
       assignmenTitle: title,
+      assignmenMarks: marks,
       link,
-      feedback,
-      submittedBy: user.email,
+      note,
+      submitter: user?.displayName,
+      submitterEmail: user?.email,
+      obtainedMarks: "",
+      feedback: "",
     };
     // console.log(assignmentSubmission);
 
@@ -86,12 +90,12 @@ const Modal = ({ isOpen, isClose, id, title }) => {
             <label className="form-control w-full mt-6">
               <div className="label">
                 <span className="label-text text-lg font-semibold">
-                  Feedback or short note
+                  Short note
                 </span>
               </div>
               <textarea
-                placeholder="Describe the assignment"
-                name="feedback"
+                placeholder="Give a short note"
+                name="note"
                 className="textarea textarea-bordered pl-3"
                 required
               />
@@ -115,4 +119,5 @@ Modal.propTypes = {
   isClose: PropTypes.func,
   id: PropTypes.string,
   title: PropTypes.string,
+  marks: PropTypes.string,
 };

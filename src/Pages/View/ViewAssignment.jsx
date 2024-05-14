@@ -51,6 +51,7 @@ const ViewAssignment = () => {
                 isClose={setShowModal}
                 id={_id}
                 title={title}
+                marks={marks}
               ></Modal>
             </div>
           </div>
