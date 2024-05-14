@@ -24,6 +24,13 @@ const PendingAssignments = () => {
           assignments except the ones you have submitted.
         </p>
         <div className="overflow-x-auto my-12">
+          {pendingAssignments.length === 0 && (
+            <div className="flex justify-center my-6">
+              <h3 className="text-3xl font-semibold">
+                No Pending Assignments available
+              </h3>
+            </div>
+          )}
           <table className="table table-sm">
             <thead>
               <tr>
@@ -33,6 +40,7 @@ const PendingAssignments = () => {
                 <th>Submitter note</th>
                 <th>Assignment Title</th>
                 <th>Assignment Marks</th>
+                <th>Status</th>
                 <th>Give marks</th>
               </tr>
             </thead>
@@ -46,6 +54,9 @@ const PendingAssignments = () => {
                     <td>{pending.note}</td>
                     <td>{pending.assignmenTitle}</td>
                     <td>{pending.assignmenMarks}</td>
+                    <td>
+                      <p className="badge badge-info">{pending.status}</p>
+                    </td>
                     <td>
                       <button
                         onClick={() => {

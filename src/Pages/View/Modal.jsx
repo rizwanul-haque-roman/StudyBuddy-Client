@@ -32,6 +32,7 @@ const Modal = ({ isOpen, isClose, id, title, marks }) => {
       submitterEmail: user?.email,
       obtainedMarks: "",
       feedback: "",
+      status: "pending",
     };
     // console.log(assignmentSubmission);
 

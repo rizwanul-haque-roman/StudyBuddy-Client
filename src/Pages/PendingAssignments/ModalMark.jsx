@@ -28,6 +28,7 @@ const ModalMark = ({ isOpen, isClose, pending }) => {
       obtainedMarks: obtainedMarks,
       feedback: feedback,
       id: pending._id,
+      status: "completed",
     };
     console.log(marksAndFeedback);
 
@@ -45,6 +46,7 @@ const ModalMark = ({ isOpen, isClose, pending }) => {
             icon: "success",
           }).then((result) => {
             if (result.isConfirmed) {
+              location.reload();
               isClose(false);
             }
           });
