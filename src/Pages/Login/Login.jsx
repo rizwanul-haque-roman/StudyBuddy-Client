@@ -52,11 +52,11 @@ const Login = () => {
   };
 
   return (
-    <div className="w-11/12 lg:container mx-auto min-h-screen bg-cover flex items-center">
+    <div className="w-11/12 lg:container mx-auto min-h-screen bg-cover flex justify-center items-center">
       <div className="flex justify-center items-center">
         <form
           onSubmit={handleSubmit}
-          className="lg:w-1/2 flex flex-col justify-center gap-4 p-6 lg:p-12 shadow-2xl rounded-xl border"
+          className="lg:w-1/2 flex flex-col justify-center gap-4 p-6 lg:px-8 lg:py-6 shadow-2xl rounded-xl border"
         >
           <img className="w-1/3 mx-auto" src={logo} alt="" />
           <h1 className="font-bold text-[#264790] text-4xl text-center">
@@ -65,7 +65,7 @@ const Login = () => {
           <p className="text-[#E58013] text-center text-xl">
             Please Enter Your Credentials to LogIn
           </p>
-          <div className="flex flex-col gap-6 my-8">
+          <div className="flex flex-col gap-2">
             <label className="border-b-2 border-[#E58013] py-2 flex items-center gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +77,7 @@ const Login = () => {
                 <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
               </svg>
               <input
-                className="outline-none"
+                className="outline-none bg-transparent bg-transparent"
                 type="email"
                 name="email"
                 placeholder="Email"
@@ -99,7 +99,7 @@ const Login = () => {
                   />
                 </svg>
                 <input
-                  className="outline-none"
+                  className="outline-none bg-transparent bg-transparent"
                   type={viewPass ? "password" : "text"}
                   name="pass"
                   placeholder="password"
@@ -117,7 +117,7 @@ const Login = () => {
           </div>
           <div className="flex gap-2 justify-start font-medium items-center hover:underline">
             <Link>
-              <h3 className="text-black">Forgot Password?</h3>
+              <h3>Forgot Password?</h3>
             </Link>
           </div>
           <button className="btn bg-[#E58013] rounded-full hover:bg-[#ff992c] border-0 text-xl text-white">
@@ -138,7 +138,7 @@ const Login = () => {
             <FaGithub />
             Log In with GitHub
           </Link>
-          <p className="text-black text-center font-medium">
+          <p className="text-center font-medium">
             New to this site? Proceed to{" "}
             <Link className="underline text-[#E58013]" to={"/register"}>
               Register

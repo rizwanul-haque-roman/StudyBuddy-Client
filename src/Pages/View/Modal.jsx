@@ -69,7 +69,7 @@ const Modal = ({ isOpen, isClose, id, title, marks }) => {
             x
           </button>
         </div>
-        <div className=" bg-orange-100 py-8 px-12 rounded-2xl">
+        <div className=" bg-[#818181c8] py-8 px-12 rounded-2xl">
           <h1 className="text-2xl font-bold text-center">
             Submit your copy of assignment
           </h1>
@@ -102,7 +102,7 @@ const Modal = ({ isOpen, isClose, id, title, marks }) => {
               />
             </label>
             <div className="flex justify-center items-center w-full">
-              <button className="mt-10 btn bg-[#E58014] hover:bg-[#E58014] text-xl text-white font-semibold border-none  drop-shadow-[0_8px_8px_rgba(247,186,51)]">
+              <button className="mt-10 btn bg-[#E58014] hover:bg-[#E58014] text-xl text-white font-semibold border-none  ">
                 Submit
               </button>
             </div>

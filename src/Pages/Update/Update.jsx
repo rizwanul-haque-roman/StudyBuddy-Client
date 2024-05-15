@@ -146,7 +146,7 @@ const Update = () => {
                 type="text"
                 defaultValue={title}
                 name="title"
-                className="outline-none w-full py-4 pl-1 border-b-2 border-[#264790]"
+                className="outline-none bg-transparent w-full py-4 pl-1 border-b-2 border-[#264790]"
                 required
               />
             </label>
@@ -160,7 +160,7 @@ const Update = () => {
                 type="number"
                 defaultValue={marks}
                 name="marks"
-                className="outline-none w-full py-4 pl-1 border-b-2 border-[#264790]"
+                className="outline-none bg-transparent w-full py-4 pl-1 border-b-2 border-[#264790]"
                 required
               />
             </label>
@@ -174,7 +174,7 @@ const Update = () => {
             <textarea
               defaultValue={description}
               name="description"
-              className="outline-none w-full py-4 pl-1 border-b-2 border-[#264790]"
+              className="outline-none bg-transparent w-full py-4 pl-1 border-b-2 border-[#264790]"
               required
             />
           </label>
@@ -188,7 +188,7 @@ const Update = () => {
               type="url"
               defaultValue={url}
               name="url"
-              className="outline-none w-full py-4 pl-1 border-b-2 border-[#264790]"
+              className="outline-none bg-transparent w-full py-4 pl-1 border-b-2 border-[#264790]"
               required
             />
           </label>
@@ -202,7 +202,7 @@ const Update = () => {
               <select
                 defaultValue={difficulty}
                 onChange={handleChange}
-                className="outline-none w-full py-[18px] border-b-2 border-[#264790]"
+                className="outline-none bg-transparent w-full py-[18px] border-b-2 border-[#264790]"
                 required
               >
                 <option value={"easy"}>Easy</option>
@@ -217,7 +217,7 @@ const Update = () => {
                 </span>
               </div>
               <DatePicker
-                className="outline-none w-full py-4 pl-1 border-b-2 border-[#264790]"
+                className="outline-none bg-transparent w-full py-4 pl-1 border-b-2 border-[#264790]"
                 onChange={(date) => setStartDate(date)}
                 placeholderText={deadline}
                 selected={startDate}
@@ -225,7 +225,7 @@ const Update = () => {
               />
             </label>
           </div>
-          <button className="mt-10 btn w-full bg-[#E58014] hover:bg-[#E58014] text-xl text-white font-semibold border-none  drop-shadow-[0_8px_8px_rgba(247,186,51)]">
+          <button className="mt-10 btn w-full bg-[#E58014] hover:bg-[#E58014] text-xl text-white font-semibold border-none  ">
             Update Assignment
           </button>
         </form>

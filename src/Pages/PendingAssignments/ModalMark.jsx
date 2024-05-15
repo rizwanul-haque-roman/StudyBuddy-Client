@@ -66,7 +66,7 @@ const ModalMark = ({ isOpen, isClose, pending }) => {
             x
           </button>
         </div>
-        <div className="bg-white py-4 lg:py-8  px-4 lg:px-12 rounded-2xl">
+        <div className="bg-[#818181c8] py-4 lg:py-8  px-4 lg:px-12 rounded-2xl">
           <h1 className="text-2xl font-bold text-center">
             Assignment Response
           </h1>
@@ -119,7 +119,7 @@ const ModalMark = ({ isOpen, isClose, pending }) => {
                 />
               </label>
               <div className="flex justify-center items-center w-full">
-                <button className="mt-4 lg:mt-10 btn btn-sm bg-[#E58014] hover:bg-[#E58014] lg:text-xl text-white font-semibold border-none  drop-shadow-[0_8px_8px_rgba(247,186,51)]">
+                <button className="mt-4 lg:mt-10 btn btn-sm bg-[#E58014] hover:bg-[#E58014] lg:text-xl text-white font-semibold border-none  ">
                   Submit
                 </button>
               </div>

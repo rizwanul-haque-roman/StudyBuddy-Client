@@ -28,14 +28,14 @@ const MySubmittedAssignments = () => {
           Here is all the assignments that you have submitted and waiting to be
           marked and reviewed by others.
         </p>
+        {pendingAssignments.length === 0 && (
+          <div className="flex justify-center my-6">
+            <h3 className="text-3xl font-semibold">
+              You have not submitted any assignment.
+            </h3>
+          </div>
+        )}
         <div className="overflow-x-auto my-12">
-          {pendingAssignments.length === 0 && (
-            <div className="flex justify-center my-6">
-              <h3 className="text-3xl font-semibold">
-                You have not submitted any assignment.
-              </h3>
-            </div>
-          )}
           <table className="table table-sm">
             <thead>
               <tr>

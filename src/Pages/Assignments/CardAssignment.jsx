@@ -61,7 +61,7 @@ const CardAssignment = ({ assignment, data, setData }) => {
     });
   };
   return (
-    <div className="bg-base-200 hover:bg-white rounded-2xl hover:transform hover:scale-[1.05] hover:transition hover:duration-300  hover:drop-shadow-xl transition duration-300 ease-out border-2">
+    <div className="bg-base-300 rounded-2xl transform hover:scale-[1.05] hover:transition hover:duration-300  hover:drop-shadow-xl transition duration-300 ease-out border-2 border-base-300">
       <div className="flex flex-col lg:flex-row justify-between items-center gap-6 p-6">
         <div className="lg:w-1/3 roounded-2xl">
           <img className="rounded-2xl" src={url} alt="" />
@@ -77,19 +77,19 @@ const CardAssignment = ({ assignment, data, setData }) => {
           <div className="flex flex-row lg:flex-col gap-2">
             <Link to={`https://studybuddy-org.web.app/view/${_id}`}>
               <p className="btn bg-amber-500 hover:bg-amber-600 lg:w-full">
-                <HiDocumentSearch className="text-xl" /> View
+                <HiDocumentSearch className="lg:text-xl" /> View
               </p>
             </Link>
             <Link to={`https://studybuddy-org.web.app/update/${_id}`}>
               <p className="btn bg-green-500 hover:bg-green-600 lg:w-full">
-                <MdEditDocument className="text-xl" /> Update
+                <MdEditDocument className="lg:text-xl" /> Update
               </p>
             </Link>
             <p
               onClick={handleDelete}
               className="btn bg-red-400 hover:bg-red-500 lg:w-full"
             >
-              <AiTwotoneDelete className="text-xl" /> Delete
+              <AiTwotoneDelete className="lg:text-xl" /> Delete
             </p>
           </div>
         </div>

@@ -25,7 +25,7 @@ const FeaturedAssignments = () => {
           with our handpicked assignments today.
         </p>
       </div>
-      <div className="grid lg:grid-cols-2 gap-6 my-12">
+      <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6 my-12">
         {featured.map((assignment) => (
           <CardAssignment key={assignment._id} assignment={assignment} />
         ))}

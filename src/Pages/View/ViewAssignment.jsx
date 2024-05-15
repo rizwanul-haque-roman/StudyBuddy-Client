@@ -44,7 +44,7 @@ const ViewAssignment = () => {
               <p className="mt-2 text-lg">{description}</p>
               <button
                 onClick={() => setShowModal(true)}
-                className="mt-10 btn bg-[#E58014] hover:bg-[#E58014] text-xl text-white font-semibold border-none  drop-shadow-[0_8px_8px_rgba(247,186,51)]"
+                className="mt-10 btn bg-[#E58014] hover:bg-[#E58014] text-xl text-white font-semibold border-none  "
               >
                 Take Assignment
               </button>

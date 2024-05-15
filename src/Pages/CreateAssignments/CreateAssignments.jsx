@@ -127,7 +127,7 @@ const CreateAssignments = () => {
                 type="text"
                 placeholder="Title of assignment"
                 name="title"
-                className="outline-none w-full py-4 pl-1 border-b-2 border-[#264790]"
+                className="outline-none bg-transparent w-full py-4 pl-1 border-b-2 border-[#264790]"
                 required
               />
             </label>
@@ -141,7 +141,7 @@ const CreateAssignments = () => {
                 type="number"
                 placeholder="Assignment marks. i.e 50"
                 name="marks"
-                className="outline-none w-full py-4 pl-1 border-b-2 border-[#264790]"
+                className="outline-none bg-transparent w-full py-4 pl-1 border-b-2 border-[#264790]"
                 required
               />
             </label>
@@ -155,7 +155,7 @@ const CreateAssignments = () => {
             <textarea
               placeholder="Describe the assignment"
               name="description"
-              className="outline-none w-full py-4 pl-1 border-b-2 border-[#264790]"
+              className="outline-none bg-transparent w-full py-4 pl-1 border-b-2 border-[#264790]"
               required
             />
           </label>
@@ -169,7 +169,7 @@ const CreateAssignments = () => {
               type="url"
               placeholder="Enter thumbnail url"
               name="url"
-              className="outline-none w-full py-4 pl-1 border-b-2 border-[#264790]"
+              className="outline-none bg-transparent w-full py-4 pl-1 border-b-2 border-[#264790]"
               required
             />
           </label>
@@ -182,7 +182,7 @@ const CreateAssignments = () => {
               </div>
               <select
                 onChange={handleChange}
-                className="outline-none w-full py-[18px] border-b-2 border-[#264790]"
+                className="outline-none bg-transparent w-full py-[18px] border-b-2 border-[#264790]"
                 required
               >
                 <option disabled selected>
@@ -200,14 +200,14 @@ const CreateAssignments = () => {
                 </span>
               </div>
               <DatePicker
-                className="outline-none w-full py-4 pl-1 border-b-2 border-[#264790]"
+                className="outline-none bg-transparent w-full py-4 pl-1 border-b-2 border-[#264790]"
                 selected={startDate}
                 onChange={(date) => setStartDate(date)}
                 required
               />
             </label>
           </div>
-          <button className="mt-10 btn w-full bg-[#E58014] hover:bg-[#E58014] text-xl text-white font-semibold border-none  drop-shadow-[0_8px_8px_rgba(247,186,51)]">
+          <button className="mt-10 btn w-full bg-[#E58014] hover:bg-[#E58014] text-xl text-white font-semibold border-none  ">
             Create Assignment
           </button>
         </form>

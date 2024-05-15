@@ -55,7 +55,7 @@ const Register = () => {
       <div className="flex justify-center items-center">
         <form
           onSubmit={handleSubmit}
-          className="lg:w-1/2 flex flex-col justify-center gap-4 p-6 lg:p-12 shadow-2xl rounded-xl border"
+          className="lg:w-1/2 flex flex-col justify-center gap-4 p-6 lg:px-8 lg:py-6 shadow-2xl rounded-xl border"
         >
           <img className="w-1/3 mx-auto" src={logo} alt="" />
           <h1 className="font-bold text-[#264790] text-4xl text-center">
@@ -64,7 +64,7 @@ const Register = () => {
           <p className="text-[#E58013] text-center text-xl">
             Please Enter Your Details to Register
           </p>
-          <div className="flex flex-col gap-6 my-8">
+          <div className="flex flex-col gap-6">
             <label className="border-b-2 border-[#E58013] py-2 flex items-center gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +75,7 @@ const Register = () => {
                 <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
               </svg>
               <input
-                className="outline-none"
+                className="outline-none bg-transparent"
                 type="text"
                 name="name"
                 placeholder="Your Name"
@@ -93,7 +93,7 @@ const Register = () => {
                 <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
               </svg>
               <input
-                className="outline-none"
+                className="outline-none bg-transparent"
                 type="email"
                 name="email"
                 placeholder="Email"
@@ -115,7 +115,7 @@ const Register = () => {
                   />
                 </svg>
                 <input
-                  className="outline-none"
+                  className="outline-none bg-transparent"
                   type={viewPass ? "password" : "text"}
                   name="pass"
                   placeholder="password"
@@ -133,12 +133,12 @@ const Register = () => {
           </div>
           <div className="flex gap-2 justify-start font-medium items-center">
             <input type="checkbox" name="check" required />
-            <h3 className="text-black">Accept terms & conditions</h3>
+            <h3>Accept terms & conditions</h3>
           </div>
           <button className="btn bg-[#E58013] rounded-full hover:bg-[#ff992c] border-0 text-2xl text-white">
             Register
           </button>
-          <p className="text-black text-center font-medium">
+          <p className="text-center font-medium">
             Already registered? Proceed to{" "}
             <Link className="underline text-[#E58013]" to={"/login"}>
               Login

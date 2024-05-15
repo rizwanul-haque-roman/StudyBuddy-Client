@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../Auth/AuthProvider";
 import profile from "../../assets/profile.png";
 import axios from "axios";
+import Theme from "../../theme/Theme";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -109,14 +110,14 @@ const Navbar = () => {
             {navdropdown && (
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 border border-[#ffbf0051] rounded-box w-52"
               >
                 {links}
               </ul>
             )}
           </div>
           <Link to={"/"}>
-            <img src={logo} alt="" />
+            <img className="w-2/3 lg:w-full" src={logo} alt="" />
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -128,13 +129,13 @@ const Navbar = () => {
           {!user && (
             <div className="flex gap-3">
               <Link to={"/login"}>
-                <button className="btn btn-sm bg-[#E58014] hover:bg-[#E58014] text-white font-semibold border-none  drop-shadow-[0_8px_8px_rgba(247,186,51)]">
-                  Log In
+                <button className="btn btn-sm bg-[#E58014] hover:bg-[#E58014] text-white font-semibold border-none  ">
+                  LogIn
                 </button>
               </Link>
               <p>Or</p>
               <Link to={"/register"}>
-                <button className="btn btn-sm bg-[#E58014] hover:bg-[#E58014] text-white font-semibold border-none  drop-shadow-[0_8px_8px_rgba(247,186,51)]">
+                <button className="btn btn-sm bg-[#E58014] hover:bg-[#E58014] text-white font-semibold border-none  ">
                   Register
                 </button>
               </Link>
@@ -160,7 +161,7 @@ const Navbar = () => {
               {dropdown && (
                 <ul
                   tabIndex={0}
-                  className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-[#FEF3DB] rounded-box w-52"
+                  className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-[#f0b73c61] rounded-box w-52"
                 >
                   <li>
                     <p className="justify-between">Name: {user?.displayName}</p>
@@ -185,6 +186,9 @@ const Navbar = () => {
               )}
             </div>
           )}
+          <div className="ml-2">
+            <Theme />
+          </div>
         </div>
       </div>
     </div>

@@ -32,14 +32,14 @@ const PendingAssignments = () => {
           to be marked and reviewed by you. You can view and mark these
           assignments except the ones you have submitted.
         </p>
+        {pendingAssignments.length === 0 && (
+          <div className="flex justify-center my-6">
+            <h3 className="text-3xl font-semibold">
+              No Pending Assignments available
+            </h3>
+          </div>
+        )}
         <div className="overflow-x-auto my-12">
-          {pendingAssignments.length === 0 && (
-            <div className="flex justify-center my-6">
-              <h3 className="text-3xl font-semibold">
-                No Pending Assignments available
-              </h3>
-            </div>
-          )}
           <table className="table table-sm">
             <thead>
               <tr>
