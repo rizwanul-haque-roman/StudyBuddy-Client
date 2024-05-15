@@ -42,7 +42,7 @@ const Modal = ({ isOpen, isClose, id, title, marks }) => {
         assignmentSubmission
       )
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         if (res.data.acknowledged === true) {
           Swal.fire({
             title: "Good job!",

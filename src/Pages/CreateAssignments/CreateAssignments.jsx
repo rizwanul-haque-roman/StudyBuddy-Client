@@ -22,7 +22,7 @@ const CreateAssignments = () => {
     const publisher = user?.email;
     const today = new Date().toLocaleDateString();
 
-    console.log(today);
+    // console.log(today);
 
     if (title.length < 15) {
       Swal.fire({
@@ -54,7 +54,7 @@ const CreateAssignments = () => {
         title: "Error!",
         text: "Please select difficulty for the assignment",
       });
-      console.log(difficulty);
+      // console.log(difficulty);
       return;
     }
     if (deadline <= today) {
@@ -63,7 +63,7 @@ const CreateAssignments = () => {
         title: "Error!",
         text: "Please give at least one day time to complete the assignment.",
       });
-      console.log(difficulty);
+      // console.log(difficulty);
       return;
     }
 
@@ -80,7 +80,7 @@ const CreateAssignments = () => {
     axios
       .post("https://study-buddy-server-six.vercel.app/assignments", assignment)
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         if (res.data.acknowledged === true) {
           Swal.fire({
             title: "Success!",
@@ -94,7 +94,7 @@ const CreateAssignments = () => {
         }
       });
 
-    console.log(assignment);
+    // console.log(assignment);
   };
 
   const handleChange = (event) => {

@@ -52,15 +52,15 @@ const AuthProvider = ({ children }) => {
       const loggedInUser = { email: currentUser?.email };
 
       // jwt token
-      console.log("currentUseer:", currentUser);
+      // console.log("currentUseer:", currentUser);
 
       if (currentUser !== null) {
         axios
           .post("https://study-buddy-server-six.vercel.app/jwt", loggedInUser, {
             withCredentials: true,
           })
-          .then((res) => {
-            console.log("token response:", res.data);
+          .then(() => {
+            // console.log("token response:", res.data);
           });
       }
     });

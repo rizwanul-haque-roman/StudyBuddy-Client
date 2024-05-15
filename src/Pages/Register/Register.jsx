@@ -32,11 +32,11 @@ const Register = () => {
       return;
     }
 
-    console.log(name, email, pass);
+    // console.log(name, email, pass);
 
     register(email, pass, name)
       .then((result) => {
-        console.log(result.user);
+        // console.log(result.user);
         navigate("/");
         Swal.fire("Registration Successful");
         updateProfile(auth.currentUser, {

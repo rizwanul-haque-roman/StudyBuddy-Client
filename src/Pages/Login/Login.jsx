@@ -21,11 +21,11 @@ const Login = () => {
     const email = form.email.value;
     const pass = form.pass.value;
 
-    console.log(email, pass);
+    // console.log(email, pass);
 
     login(email, pass)
       .then((result) => {
-        console.log(result);
+        // console.log(result);
         Swal.fire("Login Successful");
         navigate(location?.state ? location.state : "/");
       })
@@ -35,7 +35,7 @@ const Login = () => {
   const google = () => {
     googleLogin()
       .then((result) => {
-        console.log(result);
+        // console.log(result);
         navigate(location?.state ? location.state : "/");
         Swal.fire("Login Successful");
       })
@@ -45,7 +45,7 @@ const Login = () => {
   const gitHub = () => {
     githubLogin()
       .then((result) => {
-        console.log(result);
+        // console.log(result);
         Swal.fire("Login Successful");
       })
       .catch((error) => Swal.fire(error.message));

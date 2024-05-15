@@ -30,7 +30,7 @@ const ModalMark = ({ isOpen, isClose, pending }) => {
       id: pending._id,
       status: "completed",
     };
-    console.log(marksAndFeedback);
+    // console.log(marksAndFeedback);
 
     axios
       .patch(
@@ -38,7 +38,7 @@ const ModalMark = ({ isOpen, isClose, pending }) => {
         marksAndFeedback
       )
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         if (res.data.modifiedCount > 0) {
           Swal.fire({
             title: "Mark given",

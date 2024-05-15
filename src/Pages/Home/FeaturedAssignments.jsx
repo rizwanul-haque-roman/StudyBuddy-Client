@@ -12,7 +12,7 @@ const FeaturedAssignments = () => {
         setFeatured(res.data);
       });
   }, []);
-  console.log(featured);
+  // console.log(featured);
 
   return (
     <div className="my-12 lg:my-24 w-11/12 lg:container mx-auto">

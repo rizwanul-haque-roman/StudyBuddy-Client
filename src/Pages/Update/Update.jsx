@@ -21,7 +21,7 @@ const Update = () => {
 
   const [startDate, setStartDate] = useState(new Date(Date.parse(date)));
 
-  console.log(difficulty, date);
+  // console.log(difficulty, date);
 
   const handleChange = (event) => {
     setNewDifficulty(event.target.value);
@@ -41,7 +41,7 @@ const Update = () => {
 
     // console.log(today);
 
-    console.log(difficulty);
+    // console.log(difficulty);
 
     if (title.length < 15) {
       Swal.fire({
@@ -73,7 +73,7 @@ const Update = () => {
         title: "Error!",
         text: "Please select difficulty for the assignment",
       });
-      console.log(difficulty);
+      // console.log(difficulty);
       return;
     }
 
@@ -92,7 +92,7 @@ const Update = () => {
         assignment
       )
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         if (res.data.modifiedCount > 0) {
           Swal.fire({
             title: "Success!",
@@ -118,7 +118,7 @@ const Update = () => {
         }
       });
 
-    console.log(assignment);
+    // console.log(assignment);
   };
 
   return (

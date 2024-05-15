@@ -18,7 +18,7 @@ const PendingAssignments = () => {
         }
       )
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setPendingAssignments(res.data);
       });
   }, [user.email]);

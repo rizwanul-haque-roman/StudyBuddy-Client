@@ -13,7 +13,7 @@ const CardAssignment = ({ assignment, data, setData }) => {
   const { user } = useContext(AuthContext);
 
   const handleDelete = () => {
-    console.log("Publisher:", publisher, "user:", user.email, "id", _id);
+    // console.log("Publisher:", publisher, "user:", user.email, "id", _id);
 
     Swal.fire({
       title: "Are you sure?",
@@ -31,7 +31,7 @@ const CardAssignment = ({ assignment, data, setData }) => {
               `https://study-buddy-server-six.vercel.app/assignments?id=${_id}`
             )
             .then((res) => {
-              console.log(res.data);
+              // console.log(res.data);
               if (res.data.acknowledged === true) {
                 const newData = data.filter((item) => item._id !== _id);
                 setData(newData);
@@ -43,7 +43,7 @@ const CardAssignment = ({ assignment, data, setData }) => {
               }
             })
             .catch((error) => {
-              console.log(error.massage);
+              // console.log(error.massage);
               Swal.fire({
                 title: "Error!",
                 text: error.massage,
