@@ -1,18 +1,27 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ModalMark from "./ModalMark";
+import { AuthContext } from "../../Auth/AuthProvider";
 
 const PendingAssignments = () => {
+  const { user } = useContext(AuthContext);
   const [pendingAssignments, setPendingAssignments] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [pending, setPending] = useState({});
 
   useEffect(() => {
-    axios.get("http://localhost:3000/pending").then((res) => {
-      console.log(res.data);
-      setPendingAssignments(res.data);
-    });
-  }, []);
+    axios
+      .get(
+        `https://study-buddy-server-six.vercel.app/pending?email=${user.email}`,
+        {
+          withCredentials: true,
+        }
+      )
+      .then((res) => {
+        console.log(res.data);
+        setPendingAssignments(res.data);
+      });
+  }, [user.email]);
 
   return (
     <div className="min-h-screen pt-28 container mx-auto">

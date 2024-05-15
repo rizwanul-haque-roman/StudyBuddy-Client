@@ -86,7 +86,7 @@ const ModalMark = ({ isOpen, isClose, pending }) => {
             <iframe
               className="w-2/3 h-[70vh] border-2 border-amber-500 rounded-2xl"
               src={pending.link}
-              title="W3Schools Free Online Web Tutorials"
+              title="Assignment Preview"
             ></iframe>
             <form onSubmit={handleSubmit} className="w-1/3">
               <label className="form-control w-full mt-6">

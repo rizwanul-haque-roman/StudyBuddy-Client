@@ -10,6 +10,7 @@ import {
 import PropTypes from "prop-types";
 import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.config";
+import axios from "axios";
 
 export const AuthContext = createContext(null);
 
@@ -47,6 +48,19 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoader(false);
+
+      // jwt token
+
+      if (currentUser) {
+        const loggedInUser = { email: currentUser.email };
+        axios
+          .post("https://study-buddy-server-six.vercel.app/jwt", loggedInUser, {
+            withCredentials: true,
+          })
+          .then((res) => {
+            console.log("token response:", res.data);
+          });
+      }
     });
 
     return () => unsubscribe();

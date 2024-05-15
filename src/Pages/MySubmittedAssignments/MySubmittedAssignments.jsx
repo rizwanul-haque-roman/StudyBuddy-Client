@@ -8,7 +8,12 @@ const MySubmittedAssignments = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/mySubmission?email=${user?.email}`)
+      .get(
+        `https://study-buddy-server-six.vercel.app/mySubmission?email=${user?.email}`,
+        {
+          withCredentials: true,
+        }
+      )
       .then((res) => {
         console.log(res.data);
         setPendingAssignments(res.data);

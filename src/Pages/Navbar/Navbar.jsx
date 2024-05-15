@@ -3,11 +3,31 @@ import logo from "../../assets/logo.png";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Auth/AuthProvider";
 import profile from "../../assets/profile.png";
+import axios from "axios";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-
   const [dropdown, setDropdown] = useState(false);
+
+  const handleLogOut = () => {
+    if (user) {
+      const loggedOutUser = { email: user.email };
+      console.log("logged out user:", loggedOutUser);
+      axios
+        .post(
+          "https://study-buddy-server-six.vercel.app/logout",
+          loggedOutUser,
+          {
+            withCredentials: true,
+          }
+        )
+        .then((res) => console.log(res.data));
+    }
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
+
   const handleDopdown = () => {
     setDropdown(!dropdown);
   };
@@ -146,7 +166,7 @@ const Navbar = () => {
                   </Link>
                   <li>
                     <button
-                      onClick={logOut}
+                      onClick={handleLogOut}
                       className="btn btn-sm bg-[#E58014] hover:bg-[#E58014] text-white font-semibold border-none"
                     >
                       Log Out

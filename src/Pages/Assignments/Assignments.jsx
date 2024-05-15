@@ -38,7 +38,8 @@ const Assignments = () => {
     setLoader(true);
     axios
       .get(
-        `https://study-buddy-server-six.vercel.app/totalAssignments?difficulty=${difficulty}`
+        `https://study-buddy-server-six.vercel.app/totalAssignments?difficulty=${difficulty}`,
+        { withCredentials: true }
       )
       .then((res) => {
         setCount(res.data);
