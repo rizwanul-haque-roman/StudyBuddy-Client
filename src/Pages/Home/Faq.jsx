@@ -2,14 +2,14 @@ import faq from "../../assets/FAQ.png";
 
 const Faq = () => {
   return (
-    <div className="container mx-auto my-24">
+    <div className="w-11/12 lg:container mx-auto my-12 lg:my-24">
       <div>
         <div>
           <div className="hero justify-between">
-            <div className="flex justify-between items-center">
-              <img src={faq} className="w-2/5" />
-              <div className="w-1/2">
-                <h1 className="text-6xl font-bold leading-[80px]">
+            <div className="flex flex-col lg:flex-row justify-between items-center">
+              <img src={faq} className="lg:w-2/5" />
+              <div className="lg:w-1/2">
+                <h1 className="text-5xl leading-[60px] lg:text-6xl font-bold lg:leading-[80px]">
                   Frequently Asked Question
                 </h1>
                 <div className="join join-vertical w-full mt-12">

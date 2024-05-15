@@ -68,8 +68,8 @@ const Assignments = () => {
       ) : (
         <>
           <div className="min-h-screen pt-28">
-            <div className="container mx-auto ">
-              <div className="border overflow-hidden h-[30vh] rounded-2xl">
+            <div className="w-11/12 lg:container mx-auto ">
+              <div className="border overflow-hidden lg:h-[30vh] rounded-2xl">
                 <img className="w-full" src={banner} alt="" />
               </div>
               <h1 className="text-center my-12 text-5xl font-bold">
@@ -99,7 +99,7 @@ const Assignments = () => {
                   </label>
                 </form>
               </div>
-              <div className="grid grid-cols-2 gap-6 my-12">
+              <div className="grid lg:grid-cols-2 gap-6 my-12">
                 {assignments.map((assignment) => (
                   <CardAssignment
                     key={assignment._id}
@@ -119,7 +119,7 @@ const Assignments = () => {
                 {pages.map((page) => (
                   <button
                     onClick={() => setCurrentPage(page + 1)}
-                    className={`btn ml-2 ${
+                    className={`btn ml-2 my-2 ${
                       currentPage == page + 1 && "bg-green-400"
                     } `}
                     key={page}

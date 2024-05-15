@@ -24,10 +24,10 @@ const PendingAssignments = () => {
   }, [user.email]);
 
   return (
-    <div className="min-h-screen pt-28 container mx-auto">
+    <div className="min-h-screen pt-28 w-11/12 lg:container mx-auto">
       <div>
         <h1 className="text-5xl font-bold">Pending Assignments</h1>
-        <p className="w-3/4 mt-6 text-xl">
+        <p className="lg:w-3/4 mt-6 text-xl">
           Here is all the pending assignments People have submitted and waiting
           to be marked and reviewed by you. You can view and mark these
           assignments except the ones you have submitted.

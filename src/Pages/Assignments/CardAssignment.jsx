@@ -62,32 +62,32 @@ const CardAssignment = ({ assignment, data, setData }) => {
   };
   return (
     <div className="bg-base-200 hover:bg-white rounded-2xl hover:transform hover:scale-[1.05] hover:transition hover:duration-300  hover:drop-shadow-xl transition duration-300 ease-out border-2">
-      <div className="flex justify-between items-center gap-6 p-6">
-        <div className="w-1/3 roounded-2xl">
+      <div className="flex flex-col lg:flex-row justify-between items-center gap-6 p-6">
+        <div className="lg:w-1/3 roounded-2xl">
           <img className="rounded-2xl" src={url} alt="" />
         </div>
-        <div className="flex justify-between items-center gap-6 w-full">
-          <div className="space-y-5 w-3/5">
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-6 w-full">
+          <div className="space-y-5 lg:w-3/5">
             <h3 className="text-2xl font-semibold">Title: {title}</h3>
             <p className="text-xl font-medium">Marks: {marks}</p>
             <p className="text-xl font-medium">
               Assignment Difficulty: {difficulty}
             </p>
           </div>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-row lg:flex-col gap-2">
             <Link to={`https://studybuddy-org.web.app/view/${_id}`}>
-              <p className="btn bg-amber-500 hover:bg-amber-600 w-full">
+              <p className="btn bg-amber-500 hover:bg-amber-600 lg:w-full">
                 <HiDocumentSearch className="text-xl" /> View
               </p>
             </Link>
             <Link to={`https://studybuddy-org.web.app/update/${_id}`}>
-              <p className="btn bg-green-500 hover:bg-green-600 w-full">
+              <p className="btn bg-green-500 hover:bg-green-600 lg:w-full">
                 <MdEditDocument className="text-xl" /> Update
               </p>
             </Link>
             <p
               onClick={handleDelete}
-              className="btn bg-red-400 hover:bg-red-500 w-full"
+              className="btn bg-red-400 hover:bg-red-500 lg:w-full"
             >
               <AiTwotoneDelete className="text-xl" /> Delete
             </p>

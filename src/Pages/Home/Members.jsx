@@ -2,14 +2,14 @@ import globe from "../../assets/globe.gif";
 
 const Members = () => {
   return (
-    <div className="container mx-auto my-24">
+    <div className="w-11/12 lg:container mx-auto my-12 lg:my-24">
       <div>
         <div>
           <div className="hero justify-between">
-            <div className="flex flex-row-reverse justify-between items-center">
-              <img src={globe} className="w-2/5" />
-              <div className="w-1/2">
-                <h1 className="text-7xl font-bold leading-[80px]">
+            <div className="flex flex-col lg:flex-row-reverse justify-between items-center">
+              <img src={globe} className="lg:w-2/5" />
+              <div className="lg:w-1/2">
+                <h1 className="text-5xl lg:text-6xl font-bold leading-[60px] lg:leading-[80px]">
                   More Than 25K+ <br /> Students in one place.
                 </h1>
                 <p className="my-8 text-xl font-medium">

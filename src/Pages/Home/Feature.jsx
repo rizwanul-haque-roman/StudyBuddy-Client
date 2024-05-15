@@ -8,10 +8,10 @@ import features from "../../assets/features.png";
 
 const Feature = () => {
   return (
-    <div className="container mx-auto my-24">
-      <h1 className="text-7xl font-bold">What We Provide</h1>
+    <div className="w-11/12 lg:container mx-auto my-12 lg:my-24">
+      <h1 className="text-[46px] lg:text-6xl font-bold">What We Provide</h1>
       <div className="">
-        <div className="flex gap-6 justify-between my-12">
+        <div className="grid grid-cols-2 lg:flex gap-6 justify-between my-12">
           <div className="flex flex-col juctify-center bg-[#F7F7F7] hover:bg-[#fff] items-center hover:transform hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out hover:drop-shadow-xl transition duration-300 ease-out p-6 w-auto rounded-2xl">
             <MdAssignment className="text-8xl text-[#264790]" />
             <h3 className="text-xl font-medium">
@@ -52,9 +52,9 @@ const Feature = () => {
         </div>
         <div>
           <div className="hero justify-between">
-            <div className="flex justify-between items-center">
-              <img src={features} className="w-2/5 drop-shadow-lg" />
-              <div className="w-1/2">
+            <div className="flex flex-col lg:flex-row justify-between items-center">
+              <img src={features} className="lg:w-2/5 drop-shadow-lg" />
+              <div className="lg:w-1/2">
                 <h1 className="text-5xl font-bold">
                   Boost up you study with the best features available
                 </h1>

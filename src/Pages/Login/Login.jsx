@@ -52,11 +52,11 @@ const Login = () => {
   };
 
   return (
-    <div className="w-11/12 lg:container mx-auto h-screen bg-cover flex items-center">
+    <div className="w-11/12 lg:container mx-auto min-h-screen bg-cover flex items-center">
       <div className="flex justify-center items-center">
         <form
           onSubmit={handleSubmit}
-          className="w-1/2 flex flex-col justify-center gap-4 p-12 shadow-2xl rounded-xl border"
+          className="lg:w-1/2 flex flex-col justify-center gap-4 p-6 lg:p-12 shadow-2xl rounded-xl border"
         >
           <img className="w-1/3 mx-auto" src={logo} alt="" />
           <h1 className="font-bold text-[#264790] text-4xl text-center">
@@ -145,7 +145,7 @@ const Login = () => {
             </Link>
           </p>
         </form>
-        <div>
+        <div className="hidden lg:block">
           <img src={logReg} alt="" />
         </div>
       </div>

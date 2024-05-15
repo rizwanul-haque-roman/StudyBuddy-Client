@@ -60,36 +60,38 @@ const ModalMark = ({ isOpen, isClose, pending }) => {
       id="outer-div"
       className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center z-50"
     >
-      <div className="w-3/4 mx-auto">
+      <div className="w-11/12 lg:w-3/4 mx-auto">
         <div className="flex justify-end">
           <button onClick={() => isClose(false)} className="text-white text-xl">
             x
           </button>
         </div>
-        <div className="bg-white py-8 px-12 rounded-2xl">
+        <div className="bg-white py-4 lg:py-8  px-4 lg:px-12 rounded-2xl">
           <h1 className="text-2xl font-bold text-center">
             Assignment Response
           </h1>
           <div className="my-6">
-            <p className="">
+            <p>
               <span className="text-lg font-medium">Assignment Link:</span>{" "}
+              Click{" "}
               <a href={pending.link} className="underline hover:text-blue-600">
-                {pending.link}
+                here
               </a>{" "}
+              to see assignment doc/pdf.
             </p>
             <p className="">
               <span className="text-lg font-medium">Submitter short note:</span>{" "}
               {pending.note}
             </p>
           </div>
-          <div className="flex gap-6">
+          <div className="flex flex-col lg:flex-row gap-3">
             <iframe
-              className="w-2/3 h-[70vh] border-2 border-amber-500 rounded-2xl"
+              className="lg:w-2/3 h-[40vh] lg:h-[70vh] border-2 border-amber-500 rounded-2xl"
               src={pending.link}
               title="Assignment Preview"
             ></iframe>
-            <form onSubmit={handleSubmit} className="w-1/3">
-              <label className="form-control w-full mt-6">
+            <form onSubmit={handleSubmit} className="lg:w-1/3">
+              <label className="form-control w-full lg:mt-6">
                 <div className="label">
                   <span className="label-text text-lg font-semibold">
                     Give mark out of {pending.assignmenMarks}
@@ -99,11 +101,11 @@ const ModalMark = ({ isOpen, isClose, pending }) => {
                   type="number"
                   max={pending.assignmenMarks}
                   name="obtainedMarks"
-                  className="input input-bordered w-full py-4 pl-3"
+                  className="input input-sm input-bordered w-full py-4 pl-3"
                   required
                 />
               </label>
-              <label className="form-control w-full mt-6">
+              <label className="form-control w-full lg:mt-6">
                 <div className="label">
                   <span className="label-text text-lg font-semibold">
                     Provide a feedback
@@ -112,12 +114,12 @@ const ModalMark = ({ isOpen, isClose, pending }) => {
                 <textarea
                   placeholder="Type here..."
                   name="feedback"
-                  className="textarea textarea-bordered pl-3"
+                  className="textarea textarea-sm textarea-bordered pl-3"
                   required
                 />
               </label>
               <div className="flex justify-center items-center w-full">
-                <button className="mt-10 btn bg-[#E58014] hover:bg-[#E58014] text-xl text-white font-semibold border-none  drop-shadow-[0_8px_8px_rgba(247,186,51)]">
+                <button className="mt-4 lg:mt-10 btn btn-sm bg-[#E58014] hover:bg-[#E58014] lg:text-xl text-white font-semibold border-none  drop-shadow-[0_8px_8px_rgba(247,186,51)]">
                   Submit
                 </button>
               </div>

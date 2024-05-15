@@ -122,19 +122,19 @@ const Update = () => {
   };
 
   return (
-    <div className="min-h-screen pt-28 container mx-auto">
+    <div className="min-h-screen pt-28 w-11/12 lg:container mx-auto">
       <div>
         <h1 className="text-5xl font-bold">Update Assignment</h1>
-        <p className="w-3/4 mt-6 text-xl">
+        <p className="lg:w-3/4 mt-6 text-xl">
           Need to tweak something about the assignment. Update the information
           of the assignment in the form below and submit it.
         </p>
       </div>
       <div className="mt-12 flex justify-center items-center">
-        <div>
+        <div className="hidden lg:block">
           <img className="w-10/12" src={form} alt="" />
         </div>
-        <form onSubmit={handleSubmit} className="w-full">
+        <form onSubmit={handleSubmit} className="w-full mb-12">
           <div className="flex gap-6">
             <label className="form-control w-full">
               <div className="label">

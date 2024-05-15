@@ -63,7 +63,7 @@ const Modal = ({ isOpen, isClose, id, title, marks }) => {
       id="outer-div"
       className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center z-50"
     >
-      <div className="w-1/2">
+      <div className="w-11/12 lg:w-1/2">
         <div className="flex justify-end">
           <button onClick={() => isClose(false)} className="text-white text-xl">
             x

@@ -8,6 +8,7 @@ import axios from "axios";
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [dropdown, setDropdown] = useState(false);
+  const [navdropdown, setNavDropdown] = useState(false);
 
   const handleLogOut = () => {
     const loggedOutUser = { email: user.email };
@@ -25,6 +26,9 @@ const Navbar = () => {
 
   const handleDopdown = () => {
     setDropdown(!dropdown);
+  };
+  const handleNavDopdown = () => {
+    setNavDropdown(!navdropdown);
   };
 
   const links = (
@@ -80,8 +84,13 @@ const Navbar = () => {
     <div className="absolute w-full z-50">
       <div className=" container mx-auto navbar">
         <div className="navbar-start">
-          <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <div onClick={handleNavDopdown} className="dropdown">
+            <div
+              onClick={handleDopdown}
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost lg:hidden"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -97,12 +106,14 @@ const Navbar = () => {
                 />
               </svg>
             </div>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-            >
-              {links}
-            </ul>
+            {navdropdown && (
+              <ul
+                tabIndex={0}
+                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                {links}
+              </ul>
+            )}
           </div>
           <Link to={"/"}>
             <img src={logo} alt="" />

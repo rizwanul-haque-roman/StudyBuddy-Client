@@ -4,9 +4,9 @@ import bannerBg from "../../assets/banner_img.png";
 const Banner = () => {
   return (
     <div className="bg-[#f7b9332d]">
-      <div className="h-screen container mx-auto flex justify-between items-center">
+      <div className="h-screen w-11/12 lg:container mx-auto flex flex-col-reverse lg:flex-row justify-around lg:justify-between items-center p-6 lg:p-0">
         <div>
-          <h1 className="text-6xl font-bold lg:leading-[80px]">
+          <h1 className="text-5xl lg:text-6xl font-bold leading-[60px] lg:leading-[80px]">
             Study Buddy <br />
             The Only Online Platform You Will Ever Need
           </h1>
@@ -14,7 +14,7 @@ const Banner = () => {
             <Link to={"/assignments"}>Get started</Link>
           </button>
         </div>
-        <img className="w-1/2" src={bannerBg} alt="" />
+        <img className="lg:w-1/2" src={bannerBg} alt="" />
       </div>
     </div>
   );

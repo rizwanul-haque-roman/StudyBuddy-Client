@@ -21,10 +21,10 @@ const MySubmittedAssignments = () => {
   }, [user.email]);
 
   return (
-    <div className="min-h-screen pt-28 container mx-auto">
+    <div className="min-h-screen pt-28 w-11/12 lg:container mx-auto">
       <div>
         <h1 className="text-5xl font-bold">Your Submitted Assignments</h1>
-        <p className="w-3/4 mt-6 text-xl">
+        <p className="lg:w-3/4 mt-6 text-xl">
           Here is all the assignments that you have submitted and waiting to be
           marked and reviewed by others.
         </p>
@@ -42,9 +42,13 @@ const MySubmittedAssignments = () => {
                 <th>Sl No</th>
                 <th>Assignment Title</th>
                 <th>Status</th>
-                <th>Assignment Marks</th>
-                <th>Obtained Marks</th>
-                <th>Feedback</th>
+                <th>
+                  Assignment <br /> Marks
+                </th>
+                <th>
+                  Obtained <br /> Marks
+                </th>
+                <th>Feedback by examiner</th>
               </tr>
             </thead>
             {pendingAssignments.map((pending, idx) => (
