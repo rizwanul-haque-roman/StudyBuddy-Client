@@ -10,19 +10,14 @@ const Navbar = () => {
   const [dropdown, setDropdown] = useState(false);
 
   const handleLogOut = () => {
-    if (user) {
-      const loggedOutUser = { email: user.email };
-      console.log("logged out user:", loggedOutUser);
-      axios
-        .post(
-          "https://study-buddy-server-six.vercel.app/logout",
-          loggedOutUser,
-          {
-            withCredentials: true,
-          }
-        )
-        .then((res) => console.log(res.data));
-    }
+    const loggedOutUser = { email: user.email };
+    console.log("logged out user:", loggedOutUser);
+    axios
+      .post("https://study-buddy-server-six.vercel.app/logout", loggedOutUser, {
+        withCredentials: true,
+      })
+      .then((res) => console.log(res.data));
+
     logOut()
       .then(() => {})
       .catch((error) => console.log(error));
@@ -141,7 +136,10 @@ const Navbar = () => {
                 role="button"
                 className="btn btn-ghost btn-circle avatar"
               >
-                <div onClick={handleDopdown} className="w-10 rounded-full">
+                <div
+                  onClick={handleDopdown}
+                  className="w-10 rounded-full bg-orange-400"
+                >
                   <img
                     alt="Profile Photo"
                     src={user?.photoURL ? user?.photoURL : profile}

@@ -75,12 +75,12 @@ const CardAssignment = ({ assignment, data, setData }) => {
             </p>
           </div>
           <div className="flex flex-col gap-2">
-            <Link to={`http://localhost:5173/view/${_id}`}>
+            <Link to={`https://studybuddy-org.web.app/view/${_id}`}>
               <p className="btn bg-amber-500 hover:bg-amber-600 w-full">
                 <HiDocumentSearch className="text-xl" /> View
               </p>
             </Link>
-            <Link to={`http://localhost:5173/update/${_id}`}>
+            <Link to={`https://studybuddy-org.web.app/update/${_id}`}>
               <p className="btn bg-green-500 hover:bg-green-600 w-full">
                 <MdEditDocument className="text-xl" /> Update
               </p>

@@ -49,10 +49,12 @@ const AuthProvider = ({ children }) => {
       setUser(currentUser);
       setLoader(false);
 
-      // jwt token
+      const loggedInUser = { email: currentUser?.email };
 
-      if (currentUser) {
-        const loggedInUser = { email: currentUser.email };
+      // jwt token
+      console.log("currentUseer:", currentUser);
+
+      if (currentUser !== null) {
         axios
           .post("https://study-buddy-server-six.vercel.app/jwt", loggedInUser, {
             withCredentials: true,
