@@ -76,6 +76,16 @@ const Navbar = () => {
               Pending Assignments
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/studyOwl"
+              className={({ isActive }) =>
+                isActive ? "underline text-[#E58014]" : ""
+              }
+            >
+              Study Owl
+            </NavLink>
+          </li>
         </>
       )}
     </>

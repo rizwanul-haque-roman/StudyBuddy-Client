@@ -99,7 +99,7 @@ const Assignments = () => {
                   </label>
                 </form>
               </div>
-              <div className="grid grid-cols-2 lg:grid-cols-2 gap-6 my-12">
+              <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6 my-12">
                 {assignments.map((assignment) => (
                   <CardAssignment
                     key={assignment._id}

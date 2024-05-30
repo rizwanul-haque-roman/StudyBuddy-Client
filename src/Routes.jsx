@@ -10,6 +10,7 @@ import Private from "./Private/Private";
 import Update from "./Pages/Update/Update";
 import ViewAssignment from "./Pages/View/ViewAssignment";
 import MySubmittedAssignments from "./Pages/MySubmittedAssignments/MySubmittedAssignments";
+import StudyOwl from "./Pages/StudyOwl/StudyOwl";
 
 const router = createBrowserRouter([
   {
@@ -69,6 +70,14 @@ const router = createBrowserRouter([
         element: (
           <Private>
             <MySubmittedAssignments />
+          </Private>
+        ),
+      },
+      {
+        path: "/studyOwl",
+        element: (
+          <Private>
+            <StudyOwl />
           </Private>
         ),
       },
