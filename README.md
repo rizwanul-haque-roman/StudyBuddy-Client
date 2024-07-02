@@ -92,6 +92,29 @@ The Libraries and technologies that has been used in this project are:
 
 And many more like Firebase, MongoDB, ExpressJS, Tailwind etc.
 
+## Running the Project Locally
+
+To run the FitQuest project locally, follow these steps:
+
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/rizwanul-haque-roman/StudyBuddy-Client.git
+   ```
+2. **Navigate to the project directory:**
+   ```sh
+   cd StudyBuddy-Client
+   ```
+3. **Install dependencies:**
+   ```sh
+   npm install
+   ```
+4. **Set up your .env file (follow .env.example):**
+
+5. **Start the development server:**
+   ```sh
+   npm run dev
+   ```
+
 ## Developer
 
 - **Rijwanul Haque Roman** - _Computer Science Student at DIIT_ - [Rijwanul Haque Roman](https://github.com/Rijwanul-Haque-Roman)
